@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Genç Kalemler</title>
+    <link rel="shortcut icon" href="icon/favicon-32x32.png" type="logo">
+    
+    <!-- Bootstrap ve stiller -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header stilleri */
+        header {
+            background-color: white; /* Header rengi beyaz */
+            padding: 30px 0; /* Header'ı genişlettim */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: static; /* Aşağı kaydırıldığında sabit kalmasın */
+        }
+
+        .logo img {
+            max-width: 90px;
+        }
+
+        .email li a {
+            color: #333;
+            font-size: 18px;
+        }
+
+
+
+        /* İletişim formu */
+        .contact-container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin: 50px auto;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #6a11cb;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Geliştirilmiş Gönder Butonu */
+        button {
+            width: 100%;
+            background-color: #6a11cb;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Butona gölge ekledim */
+        }
+
+        button:hover {
+            background-color: #5271ff; /* Hover durumunda arka plan rengi */
+            transform: translateY(-3px); /* Hover durumunda hafif yukarı hareket */
+        }
+
+        button:active {
+            transform: translateY(0); /* Aktif olduğunda normal konuma dön */
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Gölgeyi küçült */
+        }
+
+        @media (max-width: 600px) {
+            .contact-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+
+
+    </style>
+</head>
+<body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+       <div class="loader"><img src="images/loading.gif" alt="Yükleniyor" /></div>
+    </div>
+    <!-- end loader -->
+    <div id="mySidepanel" class="sidepanel">
+       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+       <a class="active" href="index.html">Ana Sayfa</a>
+       <a href="hakkimda.html">Hakkımda</a>
+       <a href="games.html">Games</a>
+       <a href="ekibimiz.html">Ekibimiz</a>
+       <a href="iletisim.html">İletişim</a>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+         <!-- YÖNLENDİRİCİ KÜÇÜK ÜSTEKİ BUTONLAR-->
+         <div class="head-top">
+            <div class="container-fluid">
+               <div class="row d_flex">
+                  <div class="col-sm-3">
+                     <div class="logo">
+                        <a href="index.html"><img src="icon/pal.jfif" width="90" height="90" /></a>
+                     </div>
+                  </div>
+                  <div class="col-sm-9">
+                     <ul class="email text_align_right">
+                         <!-- Kullanıcı Giriş ve Kayıt -->
+                         <li><a href="giris.html"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                         <li><a href="duyuru.html"><img src="images/duyuru.png" alt="Duyuru" height="30" width="30"></a></li>
+                         <!-- Search Button -->
+                         <li>
+                             <a href="Javascript:void(0)" onclick="toggleSearch()">
+                                 <i class="fa fa-search" aria-hidden="true"></i>
+                             </a>
+                         </li>
+                         <li><button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button></li>
+                     </ul>
+                     <!-- Extended Search Bar -->
+                     <div id="search-bar" style="display:none; margin-top:50px; position:relative; max-width: 100%;">
+                         <form onsubmit="return searchFunction()" style="display: flex 1; align-items: center; width: 100%;">
+                             <input type="text" id="search-query" placeholder="Arama yap..." style="flex: 1; margin-top: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 90%;">
+                             <button type="submit" style="padding: 10px; width: 6%; margin-left: 5px; border: none; background-color: #4CAF50; color: white; border-radius: 4px; cursor: pointer;">Ara</button>
+                             <!-- Close (X) Button -->
+                             <button type="button" onclick="toggleSearch()" style="padding: 10px; width: 4%; margin-left: 5px; border: none; background-color: #f44336; color: white; border-radius: 4px; cursor: pointer;">&times;</button>
+                         </form>
+                     </div>
+                 </div>
+                 
+                 <script>
+                     // Toggle Search Bar
+                     function toggleSearch() {
+                         var searchBar = document.getElementById("search-bar");
+                         var inputField = document.getElementById("search-query");
+                         if (searchBar.style.display === "none") {
+                             searchBar.style.display = "flex";
+                             inputField.focus();  // Focus on the input field when opened
+                         } else {
+                             searchBar.style.display = "none";
+                             inputField.value = "";  // Clear the input field when closed
+                         }
+                     }
+                 
+// Define the possible routes for specific keywords
+function searchFunction() {
+    var query = document.getElementById("search-query").value.trim();
+    
+    if (query === "anasayfa" || query === "Anasayfa" || query === "Ana Sayfa" || query === "Ana sayfa") {
+        window.location.href = "index.html";
+    } else if (query === "iletişim" || query === "iletisim" || query === "İletisim" || query === "İletişim") {
+        window.location.href = "iletisim.html";
+    } else if (query === "hakkımda" || query === "hakkimda" || query === "Hakkimda" || query === "Hakkımda") {
+        window.location.href = "hakkimda.html";
+    } else if (query === "ekibimiz" || query === "Ekibimiz") {
+        window.location.href = "ekibimiz.html";
+    } else {
+        alert("Aradığınız sayfa bulunamadı!");
+    }
+
+    return false;  // Prevent form submission
+}
+
+                 </script>
+                                       
+                
+    </header>
+
+    <!-- İLETİŞİM FORMU -->
+    <div class="contact-container">
+        <h1>Bize Ulaşın</h1>
+        <form action="your-action-url" method="POST">
+            <label for="name">Adınız</label>
+            <input type="text" id="name" name="name" required placeholder="Adınızı girin">
+
+            <label for="email">E-posta</label>
+            <input type="email" id="email" name="email" required placeholder="E-posta adresinizi girin">
+
+            <label for="message">Mesajınız</label>
+            <textarea id="message" name="message" required placeholder="Mesajınızı yazın"></textarea>
+
+            <button id="gönder" type="submit">Gönder</button>
+        </form>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer">
+           <div class="container">
+              <div class="row">
+                 <div class="col-md-8 offset-md-2">
+                    <h3>Follow Us</h3>
+                    <ul class="social_icon text_align_center">
+                       <li> <a href="Javascript:void(0)"><i class="fa fa-facebook-f"></i></a></li>
+                       <li> <a href="Javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+                       <li> <a href="Javascript:void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                       <li> <a href="Javascript:void(0)"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                       <li> <a href="https://www.youtube.com/@PalE-Dergi"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <div class="conta text_align_center">
+                       <ul>
+                          <li><a href="Javascript:void(0)"><img src="images/call.png" alt="#"/> Call +01 1234567890</a></li>
+                          <li><a href="mailto:paledergi2025@gmail.com"><img src="images/mall.png" alt="E-posta" /> paledergi2025@gmail.com</a></li>
+                       </ul>
+                    </div>
+                 </div>
+                 <div class="col-md-8 offset-md-2">
+                    <div class="menu_bottom text_align_center">
+                       <ul>
+                          <li><a href="index.html">Ana Sayfa</a></li>
+                          <li><a href="hakkimda.html">Hakkımda</a></li>
+                          <li><a href="games.html">Games</a></li>
+                          <li><a href="ekibimiz.html">Ekibimiz</a></li>
+                          <li><a href="iletisim.html">İletişim</a></li>
+                       </ul>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="copyright text_align_center">
+              <div class="container">
+                 <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                       <p>© 2025 All Rights Reserved. <a href="https://egetanrıverdi.nicepage.io">Ege T</a></p>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </footer>
+
+    <!-- Yukarı Kaydırma Butonu -->
+    <a href="#" id="scrollTopBtn" style="display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; width: 60px; height: 60px; background-color: rgb(11, 181, 11); border-radius: 50%; text-align: center; line-height: 60px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: background-color 0.3s, box-shadow 0.3s;">
+        <span style="font-size: 32px; color: white;">↑</span>
+      </a>
+      
+      <style>
+        #scrollTopBtn:hover {
+          background-color: rgb(11, 181, 11);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+      </style>
+      
+      <script>
+        // Show the button when user scrolls down
+        window.onscroll = function () {
+          var scrollTopBtn = document.getElementById("scrollTopBtn");
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollTopBtn.style.display = "block";
+          } else {
+            scrollTopBtn.style.display = "none";
+          }
+        };
+      
+        // Scroll to top when button is clicked
+        document.getElementById("scrollTopBtn").addEventListener("click", function (event) {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      </script>
+      
+
+    <!-- Javascript dosyaları -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+</html>
