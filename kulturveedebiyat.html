@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/Genç_kalemlerarkatemazsiz.png" type="image/png">
+    <title>Genç Kalemler | Kültür ve Edebiyat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+   /* Genel Sayfa Stilleri */
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+   body {
+       font-family: 'Roboto', sans-serif;
+       background-color: #f4f4f9;
+       color: #444;
+       line-height: 1.6;
+       margin-bottom: 50px;
+   }
+
+   h1, h2 {
+       color: #fff;
+   }
+
+   a {
+       text-decoration: none;
+       color: inherit;
+   }
+
+   /* Header Stili */
+   header {
+       background: linear-gradient(135deg, #6a1b9a, #ff4081);
+       padding: 20px;
+       text-align: center;
+   }
+
+   header h1 {
+       font-size: 36px;
+       font-weight: 700;
+   }
+
+   nav ul {
+       list-style: none;
+       display: flex;
+       justify-content: center;
+       margin-top: 15px;
+   }
+
+   nav ul li {
+       margin: 0 20px;
+       font-size: 18px;
+   }
+
+   nav ul li a {
+       color: #fff;
+       font-weight: 500;
+       text-transform: uppercase;
+       padding: 5px 15px;
+       transition: all 0.3s ease;
+   }
+
+   nav ul li a:hover {
+       background-color: #fff;
+       color: #6a1b9a;
+       border-radius: 5px;
+   }
+
+   /* Ana İçerik Bölümü */
+   main {
+       padding: 40px 10%;
+       text-align: center;
+   }
+
+   section {
+       background: #fff;
+       border-radius: 10px;
+       padding: 30px;
+       margin-bottom: 30px;
+       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+   }
+
+   section h2 {
+       color: #6a1b9a;
+       font-size: 28px;
+       margin-bottom: 20px;
+   }
+
+   section p {
+       font-size: 18px;
+       color: #555;
+       line-height: 1.8;
+   }
+
+   section img {
+       width: 100%;
+       height: auto;
+       border-radius: 10px;
+       margin-top: 20px;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+   }
+
+   /* Footer Stili */
+   footer {
+       background-color: #6a1b9a;
+       color: white;
+       text-align: center;
+       padding: 20px 0;
+       position: relative;
+       bottom: 0;
+       width: 100%;
+   }
+
+   footer p {
+       font-size: 14px;
+   }
+
+   footer a {
+       font-weight: bold;
+       color: #fff;
+       transition: color 0.3s ease;
+   }
+
+   footer a:hover {
+       color: #ff4081;
+   }
+
+   /* Responsive Tasarım */
+   @media (max-width: 768px) {
+       main {
+           padding: 20px;
+       }
+
+       nav ul {
+           flex-direction: column;
+       }
+
+       section {
+           padding: 20px;
+       }
+   }
+</style>
+<body>
+    <header>
+        <h1>Kültür ve Edebiyat Dünyası</h1>
+        <nav>
+            <ul>
+                <li><a href="#kultur">Kültür</a></li>
+                <li><a href="#edebiyat">Edebiyat</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+                                    <!-- Arama Butonu -->
+    <li style="list-style: none; margin-right: 10px;">
+        <div class="search-container" style="position: relative; display: inline-block;">
+          <input type="text" id="searchInput" placeholder="Arama Yap..." 
+                 style="width: 200px; padding: 10px 15px; border-radius: 20px; border: 2px solid black; outline: none; font-size: 14px; transition: width 0.3s ease;">
+          <button onclick="handleSearch()" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background-color: black; color: #fff; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </li>
+<!-- Aratıla Bilecek Kelimeler -->      
+      <script>
+        function handleSearch() {
+          const searchInput = document.getElementById("searchInput").value.toLowerCase();
+          switch (searchInput) {
+            case "10 kasım":
+              window.location.href = "10kasim.html";
+              break;
+            case "10 Kasım":
+              window.location.href = "10kasim.html";
+              break;
+            case "29 ekim":
+              window.location.href = "29ekim.html";
+              break;
+            case "29 Ekim":
+              window.location.href = "29ekim.html";
+              break;
+            default:
+              alert("Aradığınız kelime bulunamadı.");
+          }
+        }
+      
+        // Optional: Expand input field when focused
+        document.getElementById("searchInput").addEventListener("focus", function() {
+          this.style.width = "250px";
+        });
+        document.getElementById("searchInput").addEventListener("blur", function() {
+          this.style.width = "200px";
+        });
+      </script>
+        </nav>
+    </header>
+
+    <main>
+        <section id="kultur">
+            <h2>Kültür</h2>
+            <p>Kültür, bir toplumun yaşam biçimini, değerlerini, inançlarını ve geleneklerini ifade eder. Toplumların mirasını ve ortak değerlerini geleceğe taşır. Kültür, sadece geçmişten gelen mirası değil, aynı zamanda toplumların gelecekte nasıl şekilleneceğini de etkiler.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Kültür Resmi">
+        </section>
+
+        <section id="edebiyat">
+            <h2>Edebiyat</h2>
+            <p>Edebiyat, insanın duygu ve düşüncelerini yazılı eserler aracılığıyla ifade ettiği sanatsal bir alandır. Şiir, roman, hikaye gibi türlerde kendini gösterir ve insan ruhunu zenginleştirir. Edebiyat, dilin sınırlarını aşarak evrensel bir dil oluşturur.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Edebiyat Resmi">
+        </section>
+    </main>
+
+    <footer id="iletisim">
+        <h2>İletişim</h2>
+        <p>&copy; 2025 Genç Kalemler. Tüm hakları saklıdır.</p>
+        <p>Design: <a href="index.html" target="_blank" title="css templates">Genç Kalemler</a></p>
+    </footer>
+</body>
+</html>

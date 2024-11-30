@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gönderi Gönder</title>
+    <style>
+        /* Genel Stil */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        /* Gönderi Kutusu */
+        .post-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #444;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Kullanıcı Adı */
+        .user-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .user-info p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Form Alanları */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 5px rgba(37, 117, 252, 0.3);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        /* Dosya Ekle */
+        .file-upload {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .file-list {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #333;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        #file-input {
+            display: none;
+        }
+
+        .upload-button {
+            background: #2575fc;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .upload-button:hover {
+            background: #1e63d6;
+        }
+
+        /* Gönder Butonu */
+        button {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        /* Geri Butonu */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #2575fc;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .back-button:hover {
+            color: #1e63d6;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <a href="index.html" class="back-button">← Geri</a>
+        <h1>Gönderi Gönder</h1>
+
+        <!-- Kullanıcı Bilgisi -->
+        <div class="user-info">
+            <p id="user-name">Ad Soyad: John Doe</p>
+        </div>
+
+        <!-- Başlık -->
+        <div class="form-group">
+            <label for="title">Başlık</label>
+            <input type="text" id="title" placeholder="Başlık giriniz">
+        </div>
+
+        <!-- Metin -->
+        <div class="form-group">
+            <label for="content">Metin</label>
+            <textarea id="content" placeholder="Metin giriniz"></textarea>
+        </div>
+
+        <!-- Dosya Ekle -->
+        <div class="file-upload">
+            <button class="upload-button" id="upload-file">Dosya Ekle</button>
+            <input type="file" id="file-input" multiple>
+            <ul id="file-list" class="file-list"></ul>
+        </div>
+
+        <!-- Gönder -->
+        <button id="submit-post">Gönder</button>
+    </div>
+
+    <script>
+        // Kullanıcı adını ayarla (örneğin, localStorage'dan al)
+        const userName = localStorage.getItem("userName") || "John Doe";
+        document.getElementById("user-name").textContent = `Ad Soyad: ${userName}`;
+
+        // Dosya Ekleme
+        const fileInput = document.getElementById("file-input");
+        const uploadButton = document.getElementById("upload-file");
+        const fileList = document.getElementById("file-list");
+
+        uploadButton.addEventListener("click", () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener("change", (event) => {
+            fileList.innerHTML = ""; // Önceki listeyi temizle
+            const files = event.target.files;
+            for (let i = 0; i < files.length; i++) {
+                const li = document.createElement("li");
+                li.textContent = files[i].name;
+                fileList.appendChild(li);
+            }
+        });
+
+        // Gönder Butonu
+        document.getElementById("submit-post").addEventListener("click", () => {
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+
+            if (!title || !content) {
+                alert("Lütfen başlık ve metin giriniz.");
+                return;
+            }
+
+            alert(`Gönderiniz başarıyla oluşturuldu.\nAd Soyad: ${userName}\nBaşlık: ${title}\nMetin: ${content}`);
+        });
+    </script>
+</body>
+</html>
