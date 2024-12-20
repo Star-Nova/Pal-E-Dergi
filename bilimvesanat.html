@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/Genç_kalemlerarkatemazsiz.png" type="image/png">
+    <title>Bilim ve Sanat</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+</head>
+<style>
+   /* Genel Sayfa Stilleri */
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+   body {
+       font-family: 'Arial', sans-serif;
+       background-color: #f7f7f7;
+       color: #333;
+       line-height: 1.6;
+       margin-bottom: 50px;
+   }
+
+   h1, h2 {
+       color: #fff;
+   }
+
+   a {
+       text-decoration: none;
+       color: inherit;
+   }
+
+   /* Header Stili */
+   header {
+       background: linear-gradient(135deg, #1e88e5, #8e24aa);
+       padding: 25px 0;
+       text-align: center;
+   }
+
+   header h1 {
+       font-size: 40px;
+       font-weight: 700;
+       letter-spacing: 2px;
+   }
+
+   nav ul {
+       list-style: none;
+       display: flex;
+       justify-content: center;
+       margin-top: 15px;
+   }
+
+   nav ul li {
+       margin: 0 20px;
+       font-size: 18px;
+       font-weight: 600;
+   }
+
+   nav ul li a {
+       color: #fff;
+       text-transform: uppercase;
+       padding: 10px 20px;
+       border-radius: 30px;
+       transition: all 0.3s ease;
+   }
+
+   nav ul li a:hover {
+       background-color: #fff;
+       color: #8e24aa;
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+   }
+
+   /* Ana İçerik Bölümü */
+   main {
+       padding: 60px 10%;
+       text-align: center;
+   }
+
+   section {
+       background: #fff;
+       border-radius: 15px;
+       padding: 40px;
+       margin-bottom: 40px;
+       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+       transition: all 0.3s ease;
+   }
+
+   section:hover {
+       transform: scale(1.02);
+   }
+
+   section h2 {
+       font-size: 30px;
+       color: #1e88e5;
+       margin-bottom: 20px;
+   }
+
+   section p {
+       font-size: 18px;
+       color: #555;
+       line-height: 1.8;
+   }
+
+   section img {
+       width: 100%;
+       height: auto;
+       border-radius: 15px;
+       margin-top: 20px;
+       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+   }
+
+   /* Footer Stili */
+   footer {
+       background: linear-gradient(135deg, #1e88e5, #8e24aa);
+       color: white;
+       text-align: center;
+       padding: 25px 0;
+       position: relative;
+       bottom: 0;
+       width: 100%;
+   }
+
+   footer p {
+       font-size: 14px;
+   }
+
+   footer a {
+       font-weight: bold;
+       color: #fff;
+       transition: color 0.3s ease;
+   }
+
+   footer a:hover {
+       color: #ff4081;
+   }
+
+   /* Responsive Tasarım */
+   @media (max-width: 768px) {
+       main {
+           padding: 20px;
+       }
+
+       nav ul {
+           flex-direction: column;
+       }
+
+       section {
+           padding: 20px;
+       }
+   }
+</style>
+<body>
+    <header>
+        <h1>Bilim ve Sanat Dünyası</h1>
+        <nav>
+            <ul>
+                <li><a href="#bilim">Bilim</a></li>
+                <li><a href="#sanat">Sanat</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="bilim">
+            <h2>Bilim</h2>
+            <p>Bilim, doğayı anlamaya yönelik sistemli bir çaba ve bilgiyi elde etme sürecidir. Fen bilimleri, sosyal bilimler gibi birçok alt dalı vardır. Bilim insanları, araştırma ve gözlem yoluyla yeni bilgiler keşfeder ve dünyayı daha iyi anlamamıza yardımcı olur.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Bilim Resmi">
+        </section>
+
+        <section id="sanat">
+            <h2>Sanat</h2>
+            <p>Sanat, insan duygularını ve düşüncelerini ifade etmenin bir yoludur. Resim, müzik, edebiyat gibi birçok alanda kendini gösterebilir. Sanat, bireysel bir yaratıcılık ve toplumsal bir ifade biçimi olarak evrensel bir dil oluşturur.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Sanat Resmi">
+        </section>
+    </main>
+
+    <footer id="iletisim">
+        <h2>İletişim</h2>
+        <p>&copy; 2025 Genç Kalemler. Tüm hakları saklıdır.</p>
+        <p>Design: <a href="index.html" target="_blank" title="css templates">Genç Kalemler</a></p>
+    </footer>
+</body>
+</html>
