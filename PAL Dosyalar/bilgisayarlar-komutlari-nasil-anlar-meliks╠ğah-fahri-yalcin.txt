@@ -1,0 +1,43 @@
+
+
+
+		Bilgisayarlar Komutları Nasıl Anlar?
+
+
+Bilgisayarlar, istesek de istemesek de artık hayatımızın her alanındalar.
+Peki, olumlu etkileri kadar olumsuz etkileri de bulunan bilgisayarların
+İngilizce dilinde yazılan kodları nasıl anladığını hiç merak etmiş miydiniz?
+
+C, C++, C#, Python, Visual Basic vb. dilleri bilgisayar yazılımına biraz
+ilgisi olan herkes duymuştur. Bu diller günümüzde çeşitli yazılımlar
+geliştirilirken en çok kullanılan dillerdir. Tahmin edebileceğiniz üzere hepsi
+de İngilizce komutlar içerir. Fakat makine bunu nasıl anlar?
+
+Bu sorunun cevabına ulaşmak için öncelikle kodları işleyecek olan bir
+işlemciye ihtiyacımız vardır. Öncelikle programlama dilleri katmanlara
+ayrılır. Bu katmanların en altında yani cihaz donanımına en yakın dil olan
+Assembly bulunur. İşlemciler sadece bu dili anlar. Bu dil hepimizin duyduğu
+“Bilgisayarlar aslında 1 ve 0’lardan oluşur.” cümlesinin kaynağıdır. Daha
+sonra bu dilin bir üst katmanında C dili bulunur. Bu dil bilgisayara İngilizce
+komutlar verebildiğimiz bir yapıya sahiptir ve bilgisayar donanımına da
+oldukça yakındır. Diğer dillerin tamamı bu dilden türetildiğinden C dili tüm
+dillerin atası kabul edilir. Örneğin C dilinden C++, C++ dilinden ise C# dili
+geliştirilmiştir. Herhangi bir dilde yazılan komutu bilgisayarın anlaması için
+yazılan kodların bir derleyici aracılığıyla Assembly diline derlenmesi
+gerekir. Bu görevi genelde işletim sistemleri üstlendiğinden yazılımcılar bile
+bu aşamayla pek ilgilenmezler. Assembly diline çevrilen kodlar hala işlemci
+tarafından anlaşılabilir değildir. Bu aşamada devreye Assembler devreye girer
+ve kodlar artık okunmaya hazırdır. Geriye işlemcinin bu kodları yukarıdan
+aşağıya doğru satır satır okuması ve uygulaması kalır.
+
+Kısaca bilgisayar dilleri kümülatif yapıda ilerler ve gelişir. Programların
+çalışması için de bu kadar işlemin yürütülmesi gerekir. Bu kadar işi
+çalıştırılan her uygulama için yapan bilgisayarlar görevlerini milisaniyeler
+içinde bitirebilirler. Bilgisayarların gücü de bundan kaynaklanır.
+Bilgisayarlar önceden kendilerine öğretilmemiş hiçbir işlemi
+gerçekleştiremezler. Yazılım mühendisleri bilgisayarlara belirli işlevleri
+öğretir ve o andan sonra her şey otomatikleşir.
+
+Melikşah Fahri Yalçın  
+Öğrenci
+
