@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon/pendik_logo.png" type="image/png">
+    <title>Genç Bakışlar | Genç Şairlerden Mısralar</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #2f2f2f;
+            line-height: 1.6;
+        }
+
+        /* Başlık */
+        header {
+            background-color: #203c8a;
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3.8em;
+            margin: 0;
+            letter-spacing: 2px;
+
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        /* Navigasyon */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;          
+            padding: 10px 15px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: #004d40;
+        }
+
+        /* Ana İçerik */
+        main {
+            padding: 40px 20px;
+        }
+
+        section {
+            margin: 40px auto;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #203c8a;
+        }
+
+        section p {
+            font-size: 1.1em;
+            margin: 20px auto;
+            max-width: 900px;
+            text-align: justify;
+        }
+
+        section img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        /* Galeri */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #203c8a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+        }
+
+        footer a:hover {
+            color: #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+                <!-- Sol Üst Fotoğraf Alanı -->
+                <div class="header-images">
+                    <a href="sinificietkinlikler.html"><img src="emojiler/geri butonu.png" alt="Geri Butonu İcon"></a>
+                    <a href="kategoriler.html"><img src="emojiler/kategoriler.png" alt="Kategoriler İcon"></a>
+                    <a href="index.html"><img src="emojiler/ev.png" alt="Kategoriler İcon"></a>
+                </div>
+                <style>
+                            /* Sol Üst Fotoğraf Alanı */
+                .header-images {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    display: flex;
+                    gap: 10px;
+                }
+        
+                .header-images a img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 5px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+        
+                .header-images a img:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                }
+                </style>
+                
+        <h1>Genç Şairlerden Mısralar</h1>
+        <p>Türk Dili ve Edebiyatı Öğretmeni Suat YAZAR</p>
+        <nav>
+            <ul>
+                <li><a href="#about">Hakkında</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Genç Şairlerden Mısralar</h2>
+            <p>9-H sınıfında "Genç Şairlerden Mısralar" temalı konuşma sınavımızı gruplar oluşturarak sınıf içi etkinliği şeklinde gerçekleştirdik.</p>
+            <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf1.jpg" alt="Genç Şairlerden Mısralar">
+        </section>
+
+        <section id="gallery">
+            <h2>Galeri</h2>
+            <div class="gallery">
+                <!-- Fotoğraflar -->
+                <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf7.jpg" alt="Fotoğraf 1">
+                <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf2.jpg" alt="Fotoğraf 2">
+                <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf3.jpg" alt="Fotoğraf 3">
+                <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf4.jpg" alt="Fotoğraf 4">
+                <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf5.jpg" alt="Fotoğraf 5">
+                <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf6.jpg" alt="Fotoğraf 6">
+        
+                <!-- Video -->
+                <video controls>
+                    <source src="videolar/Genç Şairlerden Mısralar Sınıf İçi Etkinlik.mp4" type="video/mp4">
+                    Tarayıcınız bu videoyu desteklemiyor.
+                </video>
+            </div>
+        </section>
+        
+        
+    </main>
+
+
+    <footer id="contact">
+        <p>&copy; 2025 Genç Bakışlar. Tüm Hakları Saklıdır.</p>
+        <p>Design by <a href="sinificietkinlikler.html">Genç Bakışlar</a></p>
+    </footer>
+
+</body>
+</html>

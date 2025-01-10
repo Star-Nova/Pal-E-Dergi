@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/Gençkalemlerlogo.png" type="image/png">
+
+    <title>Genç Bakışlar | Edebi ve Sanatsal Çalışmalar</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #1a1a2e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+        
+        nav {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            background: #007bff; 
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #101093;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+        }
+
+
+        main {
+            padding: 30px 5%;
+        }
+
+        section {
+            margin: 40px 0;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #1a1a2e;
+            font-size: 1.8em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .content-list {
+            margin-top: 20px;
+        }
+
+        .content-item {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-item h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #1a1a2e;
+        }
+
+        .content-item p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .content-item a {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #e94560;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .content-item a:hover {
+            color: #1a1a2e;
+        }
+
+        footer {
+            background-color: #1a1a2e;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #e94560;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            color: #f4f4f9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+                <!-- Sol Üst Fotoğraf Alanı -->
+                <div class="header-images">
+                    <a href="kulturveedebiyat.html"><img src="emojiler/geri butonu.png" alt="Geri Butonu İcon"></a>
+                    <a href="kategoriler.html"><img src="emojiler/kategoriler.png" alt="Kategoriler İcon"></a>
+                    <a href="index.html"><img src="emojiler/ev.png" alt="Kategoriler İcon"></a>
+                </div>
+                <br>
+                <br>
+                <style>
+                            /* Sol Üst Fotoğraf Alanı */
+                .header-images {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    display: flex;
+                    gap: 10px;
+                }
+        
+                .header-images a img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 5px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+        
+                .header-images a img:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                }
+                </style>
+                
+        <h1>Edebi ve Sanatsal Çalışmalar</h1>
+        <nav>
+            <ul>
+                <li><a href="#siir">Şiirler</a></li>
+                <li><a href="#ögretmen">Öğretmen Özdeyişleri</a></li>
+                <li><a href="#tiyatro">Tiyatro Çalışmaları</a></li>
+                <li><a href="#hikaye">Hikayeler</a></li>
+                <li><a href="#mektup">Mektuplar</a></li>
+                <li><a href="#kitapözetleri">Kitap Özetleri</a></li>
+                <li><a href="#makale">Makaleler, Denemeler ve Hitabetler</a></li>
+                <li><a href="#kompozisyon">Kompozisyonlar</a></li>
+                <li><a href="#teknoloji">Teknoloji</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Şiirler Bölümü -->
+        <section id="siir">
+            <h2>Şiirler</h2>
+            <div class="content-list">
+                <div class="content-item">
+                    <h3>Türk Dili ve Edebiyatı Öğretmeni Jale DEMİRCİ'nin Şiirleri</h3>
+                    <p>Yazar: Türk Dili ve Edebiyatı Öğretmeni Jale DEMİRCİ</p>
+                    <a href="şiir/Türk Dili ve Edebiyatı Öğretmeni Jale DEMİRCİ nin Şiirleri.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Elif ERKEK'in Şiirleri</h3>
+                    <p>Yazar: Elif ERKEK</p>
+                    <a href="şiir/Elif ERKEK Şiirleri.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Şevval BAYRAM'ın Şiirleri</h3>
+                    <p>Yazar: Şevval BAYRAM</p>
+                    <a href="şiir/Şevval BAYRAM ın Şiirleri.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Bahattin Ege ALTUN'un Şiirleri</h3>
+                    <p>Yazar: Bahattin Ege ALTUN</p>
+                    <a href="şiir/Bahattin Ege ALTUN Şiirleri.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Çanakkale</h3>
+                    <p>Yazar: Eylül Nehir ALTUNIŞIK</p>
+                    <a href="şiir/Çanakkale.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+
+            </div>
+        </section>
+        <!-- Öğretmen Özdeyişleri Bölümü -->
+        <section id="ögretmen">
+            <h2>Öğretmen Özdeyişleri</h2>
+            <div class="content-list">
+                <div class="content-item">
+                    <h3>Öğretmen Özdeyişleri1</h3>
+                    <p>Yazar: Öğretmenler</p>
+                    <a href="Öğretmen Özdeyişleri/öğretmen özdeyişleri1.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Öğretmen Özdeyişleri2</h3>
+                    <p>Yazar: Öğretmenler</p>
+                    <a href="Öğretmen Özdeyişleri/öğretmen-özdeyişleri2.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- Tiyatro Çalışmaları Bölümü -->
+        <section id="tiyatro">
+            <h2>Tiyatro Çalışmaları </h2>
+            <div class="content-list">
+                <div class="content-item">
+                    <h3>Taaşşuk-ı Talat ve Fitnat</h3>
+                    <p>Yazar: Halenur ÇAVDAR / Melek TAKKAÇ / Sümeyye KILIÇ</p>
+                    <a href="tiyatroçalışmaları/TİYATRO 10-A Hale.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Ajanlık Oyunları</h3>
+                    <p>Yazar: Ege BOYRAZ</p>
+                    <a href="tiyatroçalışmaları/ajanlık oyunları.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Bir Tiyatro Etkinliği (Z Kuşağım)</h3>
+                    <p>Yazar: Türk Dili ve Edebiyatı Öğretmeni Jale DEMİRCİ</p>
+                    <a href="tiyatroçalışmaları/Bir Tiyatro Etkinliği.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Erkek Aklı Kadın Haklı</h3>
+                    <p>Yazar: Sude Bahar AYDIN / Nursena TUNÇ / Yusuf AKBAŞ</p>
+                    <a href="tiyatroçalışmaları/DOC-20240522-WA0052.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hikayeler Bölümü -->
+        <section id="hikaye">
+            <h2>Hikayeler</h2>
+            <div class="content-list">
+                <div class="content-item">
+                    <h3>Kahve</h3>
+                    <p>Yazar: Sude İÇİN</p>
+                    <a href="hikayeler/Kahve (Sude İçin).pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Küfe</h3>
+                    <p>Yazar: Sude Naz ÜNVER</p>
+                    <a href="hikayeler/Küfe_Sude_9D[1].pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mektuplar Bölümü -->
+        <section id="mektup">
+            <h2>Mektuplar</h2>
+            <div class="content-list">
+                <div class="content-item">
+                    <h3>Doğu'dan Yansıyan İki Güneş</h3>
+                    <p>Yazar: Havvanur ALEMDAR</p>
+                    <a href="mektuplar/HAVVA NUR Akif ve İkbal 2.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Sözü Özümüz Olan İstiklâl Şairi</h3>
+                    <p>Yazar: Sude Bahar AYDIN</p>
+                    <a href="mektuplar/Mehmet Akif Mektup Y.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Ey Mukeddes Kahramanlar</h3>
+                    <p>Yazar: Havvanur ALEMDAR</p>
+                    <a href="mektuplar/Havvanur Mektup 15 Temmuz Şehitleri 1.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Ey Atiye Işık Önderimiz</h3>
+                    <p>Yazar: Havvanur ALEMDAR</p>
+                    <a href="mektuplar/Havvanur Atatürk'e Mektup.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Sevgili Atam</h3>
+                    <p>Yazar: Havvanur ALEMDAR</p>
+                    <a href="mektuplar/Ataturke_Mektup.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kitap Özetleri Bölümü -->
+        <section id="kitapözetleri">
+            <h2>Kitap Özetleri</h2>
+            <div class="content-list">
+                <div class="content-item">
+                    <h3>Mehmet Akif’i Anlamak</h3>
+                    <p>Yazar: Miraç DERECİ</p>
+                    <a href="kitapözetleri/Miraç DERECİ  Bir Bilene Sor Bilge Nesil Projesi.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Yokuşa Akan Sular</h3>
+                    <p>Yazar: Nisa BARIŞ</p>
+                    <a href="kitapözetleri/NİSA BARIŞ.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>İnsanın Acayip Kısa Tarihi</h3>
+                    <p>Yazar: Zeynep BAYHAN</p>
+                    <a href="kitapözetleri/İnsanın Acayip Kısa Tarihi.pdf" target="_blank">Dosyayı Göster</a>
+                </div>                
+                <div class="content-item">
+                    <h3>Gün Olur Asra Bedel</h3>
+                    <p>Yazar: Sude Bahar AYDIN</p>
+                    <a href="kitapözetleri/GÜN OLUR ASRA BEDEL (1)[1]-1.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Ateşten Gömlek</h3>
+                    <p>Yazar: Sude Bahar AYDIN</p>
+                    <a href="kitapözetleri/Ateşten Gömlek-1.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Makaleler , Denemeler ve Hitabetler  Bölümü -->
+        <section id="makale">
+            <h2>Makaleler, Denemeler ve Hitabetler</h2>
+            <div class="content-list">
+                <div class="content-item">
+                    <h3>Amerika’da Bir Dev</h3>
+                    <p>Yazar: Ecrin Züleyha KARABULUT</p>
+                    <a href="makaledenemevehitabetler/Amerika'da Bir Dev.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Arslan veya Ceylan Olmak</h3>
+                    <p>Yazar: Türk Dili ve Edebiyatı Öğretmeni Kerim ŞİRİNOĞULLARI</p>
+                    <a href="makaledenemevehitabetler/Arslan_veya_Ceylan_Olmak_-_Kerim_ŞİRİNOĞULLARI.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Türkiye’nin Dinamik Ortamında Kimlik Oluşumu: Analiz ve İnceleme</h3>
+                    <p>Yazar: Enes YENER</p>
+                    <a href="makaledenemevehitabetler/Enes Yener Makale .pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Günümüzde Türkleşmek, İslamlaşmak, Muasırlaşmaktan Ne Anlıyoruz?</h3>
+                    <p>Yazar: Volkan Efe YILMAZ</p>
+                    <a href="makaledenemevehitabetler/Günümüzde Türkleşmek, İslamlaşmak, Muasırlaşmaktan.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Komedi Üzerine</h3>
+                    <p>Yazar: Hasan Semih MANTAR</p>
+                    <a href="makaledenemevehitabetler/Hasan Semih Komedi üzerine.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>İskender’in Atı ve Kaybolan Değerler</h3>
+                    <p>Yazar: Türk Dili ve Edebiyatı Öğretmeni Kerim ŞİRİNOĞULLARI</p>
+                    <a href="makaledenemevehitabetler/İskender'in_Atı.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>İstiklal Marşı Dizeleri Yarışma</h3>
+                    <p>Yazar: Volkan Efe YILMAZ</p>
+                    <a href="makaledenemevehitabetler/İstiklal_marşı_dizeleri_yarışma_Volkan_Efe_Yılmaz[.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Türkleşmek, İslamlaşmak ve Muasırlaşmanın Tarihçesi</h3>
+                    <p>Yazar:  Sude Bahar AYDIN</p>
+                    <a href="makaledenemevehitabetler/Sude Bahar AydınPDF.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Oku</h3>
+                    <p>Yazar: Türk Dili ve Edebiyatı Öğretmeni Ayhan ÖNDER</p>
+                    <a href="makaledenemevehitabetler/OKU - Pyemtal Editör Yazısı.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Türkçe'nin Geçmişine ve Geleceğine Dair</h3>
+                    <p>Yazar: Enes YENER</p>
+                    <a href="makaledenemevehitabetler/TÜRKÇENİN GEÇMİŞİNE VE GELECEĞİNE DAİRPD.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3> Elon Musk’ın Uzaya Gönderdiği Starlink Uydularının Dünya ve İnsanlar 
+                        Üzerindeki Olumlu, Olumsuz Etkiler</h3>
+                    <p>Yazar: Türk Dili ve Edebiyatı Öğretmeni Suat YAZAR</p>
+                    <a href="makaledenemevehitabetler/elon-musk-suat-yazar.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Havlayan İki Köpek</h3>
+                    <p>Yazar: Türk Dili ve Edebiyatı Öğretmeni Kerim ŞİRİNOĞULLARI</p>
+                    <a href="makaledenemevehitabetler/havlayan-iki-kopek.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Okulun Cazibesiz Olması</h3>
+                    <p>Yazar: Kaan ALAŞ</p>
+                    <a href="makaledenemevehitabetler/okulun-cazibesiz-olmasi.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Osmanlı’da Kadın Hareketleri</h3>
+                    <p>Yazar: Nazar SÜTÇÜ</p>
+                    <a href="makaledenemevehitabetler/osmanlida-kadin-hareketleri.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>İhsan Oktay Anar'ın Suskunlar Romanının Şahıs Kadrosu, Tip ve Karakter 
+                        Yönünden İncelenmesi</h3>
+                    <p>Yazar: Türk Dili ve Edebiyatı Öğretmeni Suat YAZAR</p>
+                    <a href="makaledenemevehitabetler/İhsan Oktay Anar'ın Suskunlar Romanının Şahıs Kadrosu, Tip ve Karakter .pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kompozisyon Bölümü -->
+        <section id="kompozisyon">
+            <h2>Kompozisyonlar</h2>
+            <div class="content-list">
+                <div class="content-item">
+                    <h3>Hayatımıza Anlam Katanlar</h3>
+                    <p>Yazar: Sude İÇİN</p>
+                    <a href="kompozisyonlar/hayatimiza-anlam-katanlar.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Mehmet Akif</h3>
+                    <p>Yazar: Miraç DERECİ</p>
+                    <a href="kompozisyonlar/Nurettin Topçu - Mehmet Akif Kitabı ile İlgili Kompozisyon.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>19 Mayıs Bir Milletin Yeniden Doğuşu</h3>
+                    <p>Yazar: Dilara YÜCEL</p>
+                    <a href="kompozisyonlar/DİLARA YÜCEL 19    MAYIS KOMPOZİSYON.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Gazi ve Çocuk</h3>
+                    <p>Yazar: Burak BOZKURT</p>
+                    <a href="kompozisyonlar/Burak Bozkurt (Atatürk ve Çocuk).pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Fatih’in Destanı</h3>
+                    <p>Yazar: Türk Dili ve Edebiyatı Öğretmeni Suat YAZAR</p>
+                    <a href="kompozisyonlar/İstanbul'un Fethi, FSM.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Bir Milletin İradesi Çanakkale</h3>
+                    <p>Yazar: Sude Bahar AYDIN</p>
+                    <a href="kompozisyonlar/18 Mart Kompozisyon Sude.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Umudun Zaferi</h3>
+                    <p>Yazar: İsmail Berkay DEMİRLİ</p>
+                    <a href="kompozisyonlar/umudun-zaferi-ismail-berkay-demirli.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Zafer Yolculuğu</h3>
+                    <p>Yazar: Sude Bahar AYDIN</p>
+                    <a href="kompozisyonlar/19_Mayıs[1]SUDE.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Korkma!</h3>
+                    <p>Yazar: Defne YILMAZ </p>
+                    <a href="kompozisyonlar/Defne.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Umutvar Olmak</h3>
+                    <p>Yazar: Sahra ARSLAN</p>
+                    <a href="kompozisyonlar/umutvar-olmak-sahra-arslan.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Yaşasın Cumhuriyet</h3>
+                    <p>Yazar: Duru KUMKUMOĞLU</p>
+                    <a href="kompozisyonlar/Yaşasın Cumhuriyet.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Kütüphanede Hayat Var</h3>
+                    <p>Yazar: Havvanur ALEMDAR</p>
+                    <a href="kompozisyonlar/kutuphanede-hayat-var.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>İstiklal Uğruna!</h3>
+                    <p>Yazar: Halenur ÇIRAK</p>
+                    <a href="kompozisyonlar/istiklal-ugruna.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Gür Hisli Akif</h3>
+                    <p>Yazar: Havvanur ALEMDAR</p>
+                    <a href="kompozisyonlar/Gür Hisli Akif.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Bir Destan Nasıl Yazıldı?</h3>
+                    <p>Yazar: Zeynep ENEZ</p>
+                    <a href="kompozisyonlar/bir-destan-nasil-yazildi.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+            </div>
+        </section>
+        <!-- Teknoloji Bölümü -->
+        <section id="teknoloji">
+            <h2>Teknoloji</h2>
+            <div class="content-list">
+                <div class="content-item">
+                    <h3>Bilgisayarlar Komutları Nasıl Anlar?</h3>
+                    <p>Yazar: Melikşah Fahri YALÇIN</p>
+                    <a href="teknoloji/bilgisayarlar-komutlari-nasil-anlar-meliksah-fahri-yalcin.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+                <div class="content-item">
+                    <h3>Yapay Zeka: Sınırları Zorlayan İnovasyonun Gücü</h3>
+                    <p>Yazar: Melikşah Fahri YALÇIN</p>
+                    <a href="teknoloji/yapay-zeka-mfy.pdf" target="_blank">Dosyayı Göster</a>
+                </div>
+        </section>
+    </main>
+
+    <footer id="iletisim">
+        <p>&copy; 2025 Genç Bakışlar. Tüm hakları saklıdır.</p>
+        <p>Design: <a href="kulturveedebiyat.html">Genç Bakışlar</a></p>
+    </footer>
+</body>
+</html>

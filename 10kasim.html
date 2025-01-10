@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/29EkimLogo.png" type="image/png">
+    <title>Genç Bakışlar | 10 Kasım Atatürk'ü Anma Günü </title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Beyaz zemin */
+            color: #444; /* Okunaklı koyu gri */
+            line-height: 1.8;
+        }
+
+        /* Başlık */
+        header {
+            background: linear-gradient(135deg, black, white); /* Türk bayrağından esinlenilen kırmızı tonlar */
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            letter-spacing: 2px;
+
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        /* Navigasyon */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Ana İçerik */
+        main {
+            padding: 50px 20px;
+        }
+
+        section {
+            margin: 40px auto;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        section p {
+            font-size: 1.2em;
+            margin: 20px auto;
+            max-width: 900px;
+            text-align: justify;
+        }
+
+        /* Görseller */
+        section img {
+            width: 100%;
+            height: auto;
+            max-width: 900px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        /* Galeri */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 32%; /* Üçlü yerleşim için her bir fotoğrafın genişliği */
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+        }
+
+        footer a:hover {
+            color: black;
+        }
+
+        /* Video stil */
+        .gallery video {
+            width: 32%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .gallery img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+                <!-- Sol Üst Fotoğraf Alanı -->
+                <div class="header-images">
+                    <a href="ozelgunler.html"><img src="emojiler/geri butonu.png" alt="Geri Butonu İcon"></a>
+                    <a href="kategoriler.html"><img src="emojiler/kategoriler.png" alt="Kategoriler İcon"></a>
+                    <a href="index.html"><img src="emojiler/ev.png" alt="Kategoriler İcon"></a>
+                </div>
+                <style>
+                            /* Sol Üst Fotoğraf Alanı */
+                .header-images {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    display: flex;
+                    gap: 10px;
+                }
+        
+                .header-images a img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 5px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+        
+                .header-images a img:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                }
+                </style>
+                
+        <h1>10 Kasım Atatürk'ü Anma Günü</h1>
+        <p>Atamızı Sevgi, Saygı ve Özlemle Anıyoruz</p>
+        <nav>
+            <ul>
+                <li><a href="#about">Hakkında</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>10 Kasım'ın Anlamı</h2>
+            <p>Pendik Anadolu Lisesi, 10 Kasım 2024'te okulumuz bahçesinde yapılan törenle Gazi Mustafa Kemal Atatürk'ü andı. Ata'mızın hayata gözlerini yumduğu 9.05'te iki dakikalık saygı duruşu ve ardından Istiklal Marşımız okundu. Tarih zümremiz tarafından hazırlanan törende günün anlam ve önemini belirten konuşmayı okulumuz Tarih Öğretmeni Hüseyin Kahraman yaptı. Öğrencilerin okuduğu şiirler ve yazılarla programımız devam etti. Müzik Öğretmeni Sema Azeri'nin yönetiminde öğrecilerimiz tarafından seslendirilen şarkılarla ve türkülerle törenimiz sona erdi. Emeği geçen öğretmen ve öğrencilerimize teşekkür ederiz.</p>
+            <img src="özel günler/10 Kasım/10 Kasım Kapak Fotoğrafı.jpg"alt="10 Kasım Atatürk">
+        </section>
+
+        <section id="gallery" class="fade-in">
+            <h2>Galeri</h2>
+            <div class="gallery">
+                <video width="900" height="500" controls autoplay>
+                    <source src="videolar/dokuzu beş geçe 10 kasım.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+                <video width="900" height="500" controls autoplay>
+                    <source src="videolar/saygı duruşu 10 kasım.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+                <video width="900" height="500" controls autoplay>
+                    <source src="videolar/hüseyin kahraman 10 kasım konuşma videosu.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+                <video width="900" height="500" controls autoplay>
+                    <source src="videolar/10 Kasım 1.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+                <img src="özel günler/10 Kasım/10 Kasım Kapak Fotoğrafı.jpg" alt="Atatürk 3">
+                <video width="900" height="500" controls autoplay>
+                    <source src="videolar/10 Kasım 2.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+
+                <img src="özel günler/10 Kasım/Hüseyin Kahraman 10 kasım konuşma fotoğrafı.jpg" alt="Atatürk 3">
+                <img src="özel günler/10 Kasım/10 Kasım Topluca Saygı Duruşu.jpg" alt="10 Kasım Atatürk'ü Anma Günü">
+                <img src="özel günler/10 Kasım/10 Kasımla ilgili konuşma uzaktan fotoğraf.jpg" alt="10 Kasım Atatürk'ü Anma Günü">
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2025 Genç Bakışlar. Tüm Hakları Saklıdır.</p>
+        <p>Design by <a href="ozelgunler.html">Genç Bakışlar</a></p>
+    </footer>
+</body>
+</html>

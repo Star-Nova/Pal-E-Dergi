@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genç Bakışlar | Hesap Ayarları</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+    <style>
+        /* Genel Stil */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #4caf50, #1e90ff);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Ayarlar Kutusu */
+        .settings-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        /* Geri Butonu */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #1e90ff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .back-button:hover {
+            color: #1c86ee;
+        }
+
+        /* Başlık ve Açıklama */
+        h1 {
+            font-size: 1.8rem;
+            color: #444;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Form Grupları */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .inline-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .name-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .name-group input {
+            flex: 1;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            border-color: #1e90ff;
+            box-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
+            outline: none;
+        }
+
+        button {
+            background: #1e90ff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #1c86ee;
+        }
+
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+        }
+
+        .email-display {
+            padding: 10px;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Profil Fotoğrafı */
+        .profile-photo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .profile-photo img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .theme-switch {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .theme-switch label {
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <a href="index.html" class="back-button">← Geri</a>
+        <h1>Hesap Ayarları</h1>
+        <p class="description">Hesap ayrıntılarınızı aşağıda yönetin.</p>
+
+        <div class="profile-photo">
+            <img id="profile-img" src="https://via.placeholder.com/100" alt="Profil Fotoğrafı">
+            <button id="change-photo">Fotoğrafı Değiştir</button>
+            <input type="file" id="photo-input" accept="image/*" style="display: none;">
+        </div>
+
+        <!-- Ad ve Soyad -->
+        <div class="form-group">
+            <label for="full-name">Ad ve Soyad</label>
+            <div class="name-group">
+                <input type="text" id="first-name" placeholder="Ad">
+                <input type="text" id="last-name" placeholder="Soyad">
+            </div>
+        </div>
+
+        <!-- Şifre Değiştirme -->
+        <div class="form-group">
+            <label for="password">Şifre</label>
+            <div class="inline-group">
+                <input type="password" id="password" placeholder="Yeni şifreyi girin">
+                <button id="change-password">Şifreyi Değiştir</button>
+            </div>
+        </div>
+
+        <!-- Tanımlı E-posta -->
+        <div class="form-group">
+            <label for="email">Email Adresi</label>
+            <p id="email" class="email-display">deneme@gmail.com</p>
+        </div>
+
+        <!-- Tema Değiştirme -->
+        <div class="theme-switch">
+            <label for="theme">Tema Ayarla:</label>
+            <select id="theme">
+                <option value="light">Aydınlık</option>
+                <option value="dark">Karanlık</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        // Profil Fotoğrafını Değiştirme
+        const profileImg = document.getElementById("profile-img");
+        const changePhotoButton = document.getElementById("change-photo");
+        const photoInput = document.getElementById("photo-input");
+
+        changePhotoButton.addEventListener("click", () => {
+            photoInput.click();
+        });
+
+        photoInput.addEventListener("change", (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    profileImg.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Şifre Değiştirme İşlemi
+        document.getElementById("change-password").addEventListener("click", () => {
+            const password = document.getElementById("password").value;
+            if (password) {
+                alert(`Şifreniz ${password} olarak güncellendi.`);
+            } else {
+                alert("Lütfen kaydetmeden önce yeni bir şifre giriniz.");
+            }
+        });
+
+        // Tema Değişikliği
+        document.getElementById("theme").addEventListener("change", (e) => {
+            const theme = e.target.value;
+            if (theme === "dark") {
+                document.body.style.background = "#333";
+                document.body.style.color = "#fff";
+            } else {
+                document.body.style.background = "linear-gradient(135deg, #4caf50, #1e90ff)";
+                document.body.style.color = "#333";
+            }
+        });
+    </script>
+</body>
+</html>

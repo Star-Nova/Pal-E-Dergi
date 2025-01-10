@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Okul ve Sınıf Panoları</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5ff; /* Açık mavi arka plan */
+            color: #333;
+        }
+
+        /* Başlık */
+        header {
+            background: linear-gradient(90deg, #005f99, #00a1b7); /* Mavi tonları */
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        nav {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            background: #007bff; 
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #101093;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+        }
+
+
+        /* Ana İçerik */
+        main {
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #005f99; /* Başlıklarda mavi ton */
+        }
+
+        /* Galeri */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 95, 153, 0.3); /* Hover'da mavi gölge */
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 161, 183, 0.8); /* Mavi-yeşil tonunda yarı şeffaf */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: center;
+            font-size: 1.1em;
+            padding: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #00a1b7, #005f99); /* Yeşil ve mavi geçişli */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #ffdd57; /* Sarı tonunda bağlantı */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+                <!-- Sol Üst Fotoğraf Alanı -->
+                <div class="header-images">
+                    <a href="etkinlikleriniz.html"><img src="emojiler/geri butonu.png" alt="Geri Butonu İcon"></a>
+                    <a href="kategoriler.html"><img src="emojiler/kategoriler.png" alt="Kategoriler İcon"></a>
+                    <a href="index.html"><img src="emojiler/ev.png" alt="Kategoriler İcon"></a>
+                </div>
+                <br>
+                <br>
+                <style>
+                            /* Sol Üst Fotoğraf Alanı */
+                .header-images {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    display: flex;
+                    gap: 10px;
+                }
+        
+                .header-images a img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 5px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+        
+                .header-images a img:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                }
+                </style>
+                
+        <h1>Okul ve Sınıf Panoları</h1>
+        <nav>
+            <ul>
+                <li><a href="#okul-panolar">Okul Panoları</a></li>
+                <li><a href="#sinif-panolar">Sınıf Panoları</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Okul Panoları -->
+        <section id="okul-panolar">
+            <h2>Okul Panoları</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/Resim Klübü Pano1.jpg" alt="Okul Panosu 1">
+                    <div class="overlay">Resim Kulübü Pano</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Bilim Fen Teknoloji Klübü Pano1.jpg" alt="Okul Panosu 3">
+                    <div class="overlay">Bilim Fen ve Teknoloji Kulübü Pano</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Afet Hazırlık Klübü Pano1.jpg" alt="Okul Panosu 3">
+                    <div class="overlay">Afet Hazırlık Kulübü Pano</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Dilimizin Zenginlikleri Pano1.jpg" alt="Okul Panosu 3">
+                    <div class="overlay">Dilimizin Zenginlikleri Pano</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Resim Dersi Pano1.jpg" alt="Okul Panosu 2">
+                    <div class="overlay">Resim Dersi Pano</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sınıf Panoları -->
+        <section id="sinif-panolar">
+            <h2>Sınıf Panoları</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/9D sınıf panosu.jpg" alt="Sınıf Panosu 1">
+                    <div class="overlay">9-D Sınıfı Panosu</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/9G sınıf panosu.jpg" alt="Sınıf Panosu 2">
+                    <div class="overlay">9-G Sınıfı Panosu</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/10D sınıf panosu.jpg" alt="Sınıf Panosu 3">
+                    <div class="overlay">10-D Sınıfı Panosu</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/11A sınıf panosu.jpg" alt="Sınıf Panosu 3">
+                    <div class="overlay">11-A Sınıfı Panosu</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/11A sınıf panosu.jpg" alt="Sınıf Panosu 3">
+                    <div class="overlay">11-A Sınıfı Panosu</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/11G sınıf panosu.jpg" alt="Sınıf Panosu 3">
+                    <div class="overlay">11-G Sınıfı Panosu</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="iletisim">
+        <p>&copy; 2025 Genç Bakışlar. Tüm Hakları Saklıdır.</p>
+        <p>Design by <a href="etkinlikleriniz.html">Genç Bakışlar</a></p>
+    </footer>
+</body>
+</html>

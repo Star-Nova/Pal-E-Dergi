@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/pendik_logo.png" type="image/png">
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <title>Genç Bakışlar | Etkili Çalışma Teknikleri ve Sınavda Başarı Stratejileri</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #e3f2fd, #ffffff);
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* Başlık */
+        header {
+            background: linear-gradient(135deg, #02bd31, #81fada);
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        /* Navigasyon */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: #02bd31;
+        }
+
+        /* Ana İçerik */
+        main {
+            padding: 50px 20px;
+        }
+
+        section {
+            margin: 40px auto;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #02bd31;
+        }
+
+        section p {
+            font-size: 1.2em;
+            margin: 20px auto;
+            max-width: 900px;
+            text-align: justify;
+        }
+
+        section img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+
+        /* Galeri */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        /* Video stil */
+        .gallery video {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #02bd31;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+        }
+
+        footer a:hover {
+            color: #81fada;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+                <!-- Sol Üst Fotoğraf Alanı -->
+                <div class="header-images">
+                    <a href="etkinlikleriniz.html"><img src="emojiler/geri butonu.png" alt="Geri Butonu İcon"></a>
+                    <a href="kategoriler.html"><img src="emojiler/kategoriler.png" alt="Kategoriler İcon"></a>
+                    <a href="index.html"><img src="emojiler/ev.png" alt="Kategoriler İcon"></a>
+                </div>
+                <style>
+                            /* Sol Üst Fotoğraf Alanı */
+                .header-images {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    display: flex;
+                    gap: 10px;
+                }
+        
+                .header-images a img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 5px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+        
+                .header-images a img:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                }
+                </style>
+                
+        <h1>Prof.Dr. Erten Gökçe</h1>
+        <p>Etkili Çalışma Teknikleri ve Sınavda Başarı Stratejileri</p>
+        <nav>
+            <ul>
+                <li><a href="#about">Hakkında</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Etkili Çalışma Teknikleri ve Sınavda Başarı Stratejileri</h2>
+            <p>Ankara Üniversitesi Öğretim Üyesi Sn. Prof.Dr. Erten Gökçe 11. sınıf öğrencilerimize "Etkili çalışma teknikleri ve sınavda başarı stratejileri" konulu seminer verdi. Değerli Hocamıza katkılarından dolayı teşekkür ederiz.</p>
+            <img src="etkinlikler foto/Etkili Çalışma Teknikleri/Prof.Dr. Erten Gökçe Fotoğraf0.jpg" alt="Fotoğraf 0">
+        </section>
+
+        <section id="gallery">
+            <h2>Galeri</h2>
+            <div class="gallery">
+                <img src="etkinlikler foto/Etkili Çalışma Teknikleri/Prof.Dr. Erten Gökçe Fotoğraf8.jpg" alt="Fotoğraf 0">
+                <img src="etkinlikler foto/Etkili Çalışma Teknikleri/Prof.Dr. Erten Gökçe Fotoğraf1.jpg" alt="Fotoğraf 1">
+                <img src="etkinlikler foto/Etkili Çalışma Teknikleri/Prof.Dr. Erten Gökçe Fotoğraf2.jpg" alt="Fotoğraf 2">
+                <img src="etkinlikler foto/Etkili Çalışma Teknikleri/Prof.Dr. Erten Gökçe Fotoğraf3.jpg" alt="Fotoğraf 3">
+                <img src="etkinlikler foto/Etkili Çalışma Teknikleri/Prof.Dr. Erten Gökçe Fotoğraf4.jpg" alt="Fotoğraf 4">
+                <img src="etkinlikler foto/Etkili Çalışma Teknikleri/Prof.Dr. Erten Gökçe Fotoğraf5.jpg" alt="Fotoğraf 5">
+                <img src="etkinlikler foto/Etkili Çalışma Teknikleri/Prof.Dr. Erten Gökçe Fotoğraf6.jpg" alt="Fotoğraf 6">
+                <img src="etkinlikler foto/Etkili Çalışma Teknikleri/Prof.Dr. Erten Gökçe Fotoğraf7.jpg" alt="Fotoğraf 7">
+<!-- Video -->
+<video controls>
+    <source src="videolar/Erten Gökçe Video1.mp4" type="video/mp4">
+    Tarayıcınız bu videoyu desteklemiyor.
+</video>
+<!-- Video -->
+<video controls>
+    <source src="videolar/Erten Gökçe Video2.mp4" type="video/mp4">
+    Tarayıcınız bu videoyu desteklemiyor.
+</video>
+            </div>
+            <br>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2025 Genç Bakışlar. Tüm Hakları Saklıdır.</p>
+        <p>Design by <a href="etkinlikleriniz.html">Genç Bakışlar</a></p>
+    </footer>
+</body>
+</html>

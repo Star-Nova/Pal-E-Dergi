@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Gönderiler</title>
+    <style>
+        /* Genel Stil */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .post-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 800px;
+            cursor: pointer;
+        }
+
+        .post-container h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .post-container p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .file-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .file-list li {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .delete-button {
+            background-color: red;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gönderiler</h1>
+
+    <!-- Gönderi içeriğini buraya ekleyeceğiz -->
+    <div id="posts-list"></div>
+
+    <script>
+        // localStorage'dan gönderi verilerini al
+        const posts = JSON.parse(localStorage.getItem('posts')) || [];
+        const postsList = document.getElementById("posts-list");
+
+        if (posts.length === 0) {
+            postsList.innerHTML = "<p>Henüz gönderi yapılmadı.</p>";
+        } else {
+            posts.forEach((postData, index) => {
+                const postContainer = document.createElement("div");
+                postContainer.classList.add("post-container");
+
+                postContainer.innerHTML = `
+                    <h2>Başlık: ${postData.title}</h2>
+                    <p>Metin: ${postData.content}</p>
+                    <ul class="file-list">
+                        ${postData.files ? postData.files.split(', ').map(file => `<li>${file}</li>`).join('') : ''}
+                    </ul>
+                    <p>Gönderen: ${postData.userName}</p>
+                    <button class="delete-button" data-index="${index}">Sil</button>
+                `;
+                
+                postContainer.addEventListener("click", () => {
+                    alert(`Başlık: ${postData.title}\nMetin: ${postData.content}`);
+                });
+
+                postsList.appendChild(postContainer);
+            });
+
+            // Silme işlemi
+            document.querySelectorAll(".delete-button").forEach(button => {
+                button.addEventListener("click", (e) => {
+                    const postIndex = e.target.getAttribute("data-index");
+                    posts.splice(postIndex, 1);
+                    localStorage.setItem('posts', JSON.stringify(posts));
+                    window.location.reload();
+                });
+            });
+        }
+    </script>
+</body>
+</html>

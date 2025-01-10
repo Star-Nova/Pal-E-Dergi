@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/pendik_logo.png" type="image/png">
+    <title>Genç Bakışlar | Müdür Bey ile Röportaj</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        /* Başlık */
+        header {
+            background: linear-gradient(135deg, #004d40, #26a69a);
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        /* Navigasyon */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: #004d40;
+        }
+
+        /* Ana İçerik */
+        main {
+            padding: 50px 20px;
+        }
+
+        section {
+            margin: 40px auto;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #004d40;
+        }
+
+        section p {
+            font-size: 1.2em;
+            margin: 20px auto;
+            max-width: 900px;
+            text-align: justify;
+        }
+
+        /* Galeri */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+        }
+
+        footer a:hover {
+            color: #26a69a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .gallery img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+            <!-- Sol Üst Fotoğraf Alanı -->
+            <div class="header-images">
+                <a href="roportaj.html"><img src="emojiler/geri butonu.png" alt="Geri Butonu İcon"></a>
+                <a href="kategoriler.html"><img src="emojiler/kategoriler.png" alt="Kategoriler İcon"></a>
+                <a href="index.html"><img src="emojiler/ev.png" alt="Kategoriler İcon"></a>
+            </div>
+            <style>
+                        /* Sol Üst Fotoğraf Alanı */
+            .header-images {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                display: flex;
+                gap: 10px;
+            }
+    
+            .header-images a img {
+                width: 50px;
+                height: 50px;
+                border-radius: 5px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+    
+            .header-images a img:hover {
+                transform: scale(1.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            }
+                    /* Butonlar */
+        .button {
+            display: inline-block;
+            margin: 20px 10px 0;
+            padding: 10px 30px;
+            background-color: #004d40;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #26a69a;
+            color: #333;
+            transform: translateY(-3px);
+        }
+
+        .button:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px rgba(255, 69, 0, 0.5);
+        }
+            </style>
+            
+    <header>
+        <h1>Müdür Bey ile Röportaj</h1>
+        <p>Pendik Anadolu Lisesi'nde Unutulmaz Bir Röportaj!</p>
+        <nav>
+            <ul>
+                <li><a href="#about">Hakkında</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Okul Müdürümüz Sayın Halil YILDIZ ile Röportaj</h2>
+            <p style="text-align: justify;">
+                Merhaba Halil Hocam,
+                <br>
+                <br> 
+                1-Öncelikle eğitim ve meslek hayatınızdan bahseder misiniz?
+                <br>
+                <br> 
+                1989 yılında Tunceli’de öğretmen olarak göreve başladım. 1,5 yıl çalıştıktan 
+                sonra İstanbul Pendik’e atandım. Pendik İmam Hatip Lisesinde 17 yıl çalıştım. 
+                Bu 17 yılın 14 yılı müdür yardımcısı olarak görev yaptım. Daha sonra yurt 
+                dışına, Almanya’ya, Türkçe öğretmeni olarak bakanlık tarafından gönderildim. 
+                2008’de yurt dışı dönüşü Kırımlı Fazilet Olcay Anadolu Lisesinde 2 yıl Almanca 
+                öğretmenliği, 2,5 yıl Müdür Başyardımcılığı yaptıktan sonra 2012 yılında 
+                tekrar yurt dışına Türkçe öğretmeni olarak görevlendirildim. 2015 yılında yurt 
+                dışından döndüm. 1 yıl Kartal Süleyman Demirel Anadolu Lisesinde Almanca 
+                öğretmenliği yaptıktan sonra 15 Temmuz 2016 tarihinde Pendik Anadolu Lisesinde 
+                okul müdürü olarak göreve başladım.
+                <br>
+                <br> 
+                2-Okulumuzun eğitime başladığı günden bugüne kadar olan gelişim sürecinden 
+                kısaca bahseder misiniz?
+                <br>
+                <br>
+                Pendik Lisesi 1939 yılında ortaokul olarak açılmış, ortaokul binası şu an 
+                Pendik Çarşı Camisi’nin bulunduğu yerde eski bir binadaymış. 1959 yılında 
+                içinde bulunduğumuz bu bina yapılmış. 1959’dan günümüze kadar Pendik Lisesi, 
+                Pendik Anadolu Lisesi olarak eğitim öğretime devam etmektedir ve Anadolu 
+                yakasının en eski liselerinden bir tanesidir.
+                <br>
+                <br> 
+                3-Bildiğimiz kadarıyla branşınız dil üzerine, okulumuzdaki yabancı dil eğitimi 
+                hakkında bizi bilgilendirir misiniz? 
+                <br>
+                <br>
+                Okulumuzda İngilizce birinci, Almanca ise ikinci yabancı dil olarak 
+                okutulmaktadır. Öğrencilerimizin İngilizcede yabancı dil seviyelerini daha da 
+                arttırmak için 9 ve 10. sınıfta seçmeli derslerden bir tanesini haftalık 2 
+                saat olarak İngilizce seçmesini öğrencilerimize tavsiye ediyoruz. Ara 
+                sınıflardaki dil eğitimi nispeten iyi fakat 11 ve 12. sınıftaki öğrencilerimiz 
+                alan olarak dil seçtikleri zaman bu sınıftaki öğrencilerimiz TYT ve YDT‘de 
+                gayet güzel başarı elde ederek iyi üniversitelere yerleşmektedirler. 
+                <br>
+                <br>
+                4-Hocam peki, dil demişken bize Erasmus projesi hakkında bilgi verebilir 
+                misiniz? 
+                <br>
+                <br>
+                İl Milli Eğitim Müdürlüğü projelerine ortak olduk, İl Milli Eğitim 
+                Müdürlüğünün belirlediği kriterler çerçevesinde okulumuz İstanbul’da ilk 3’e 
+                girdi. Bir puanlama yaptılar ve bu puanlamaya istinaden okulumuzdan başta 3 
+                öğrencinin Erasmus’a gideceğini söylediler. Daha sonra dünyadaki ekonomik 
+                krizlerden dolayı bu sayı 2’ye düştü. Biz de öğrencilerimizi hakkaniyet 
+                ölçüsünde seçmek için ilk önce bir dil sınavı yaptık. Bu dil sınavında 20 
+                öğrenci belirledik. Bu 20 öğrenci daha sonra okulumuzda açılan dil kursuna 
+                devam ettiler. Sonunda yine İngilizce öğretmenleri yazılı bir mülakat yaparak 
+                ilk 3’e giren öğrencileri belirlediler. Daha sonra sayı 2’ye düşünce ilk 2 
+                öğrencimiz haziran ayının son haftası Hollanda’ya 1 haftalık bir değişim 
+                programına gittiler ama orada da bazı olumsuzluklar yaşamışlar o da işin güzel 
+                tarafı.
+                <br>
+                <br> 
+                5-Pendik Anadolu Lisesi olarak öğrencilerimize akademik, sosyal, kültürel, 
+                sanatsal ve sportif faaliyetler açısından dinamik ve katılımcı bir gençlik 
+                yetiştirmek adına geleceğe hazırlamak için eğitim konusundaki düşünceleriniz 
+                nelerdir?
+                <br>
+                <br>
+                Pendik Anadolu Lisesi, Pendik’in eğitimdeki lokomotif okullarından bir tanesi 
+                yani biz şunu diyoruz, Pendik’te eğitim Pendik Anadolu Lisesi olmadan olmaz. 
+                Yani bizim sahip olduğumuz imkânlar konferans salonumuz, büyük bir bahçemiz, 
+                öğrencilerimizin spora karşı olan ilgileri okulumuzu birçok sportif ve 
+                kültürel alanda öne çıkarıyor. Ancak işin acı tarafı şu ki öğrencilerimiz 
+                bizim gösterdiğimiz kadar gayret göstermiyor. Okulda bir etkinlik yapılacağı 
+                zaman bu etkinlikte görev almak isteyen öğrenci sayısı zaman zaman sıfıra 
+                yaklaşıyor. O da şundan kaynaklanıyor. Okulumuzun çok geniş bir hinterlandı 
+                var yani E5’in altı ve E5’in üstünde bulunan Dumlupınar, Çınardere’nin bir 
+                kısmı, Esenyalı, Güzelyalı, Kavakpınar, Çamçeşme Mahalleleri bizim kayıt 
+                bölgelerimiz. Bu alan çok büyük olduğu için öğrencilerimize hak veriyoruz, 
+                çıkışta 8 saat dersten sonra hiçbir öğrencimiz burada sosyal etkinlik için 
+                kalmak istemiyor veya aileler de artık çocuklarına eskisi kadar güvenmiyorlar. 
+                Buna rağmen biz Pendik’te sosyal etkinlik ve kültürel faaliyetlerde iyi bir 
+                noktadayız.
+                <br>
+                <br>
+                6-Gençlere ve öğrencilerimize okul hayatında ve kendi yaşamlarında başarılı 
+                olmaları için ayrıca bölüm ve üniversite seçimlerinde 10 ve 12. sınıflara ne 
+                gibi tavsiyelerde bulunursunuz? 
+                <br>
+                <br>
+                Özellikle 12. sınıflarda meslek seçimi için tanıtım amaçlı en az birkaç 
+                üniversiteye Kasım-Aralık aylarında gezi düzenledik. Daha sonra İlçe Milli 
+                Eğitim Müdürlüğü, Yunus Emre Kültür Merkezinde yaptığı kariyer günlerine 33 
+                tane değişik üniversite geldi. Biz de 11 ve 12. sınıf öğrencilerimizin hepsini 
+                o kariyer günlerine götürerek en azından seçecekleri mesleklerle ilgili bir ön 
+                bilgileri olsun istiyoruz. Ayrıca okulumuzdaki rehberlik servisi ile 11 ve 12. 
+                sınıf öğrencilerimize rehberlik yaparak doğru meslek seçimi yönünde onları 
+                yönlendirmeye çalışıyoruz. Tabii Türkiye’deki sınav sistemi maalesef her 
+                öğrenciye istediği bir bölümde okuma imkânı sunmuyor ama bazı öğrencilerimiz 
+                ilk yıl çok iyi puan almalarına rağmen bir yıl veya iki yıl daha hazırlanarak 
+                istedikleri bölümlere giden öğrencilerimiz de oldu. 
+                <br>
+                <br>
+                7-Okulumuz bildiğiniz gibi Gedik Üniversitesi ile anlaşma içindeydi, bunun 11 
+                ve 12. sınıflara avantajlarından bahseder misiniz? 
+                <br>
+                <br>
+                Öncelikle bunu birçok üniversite ile yapacağız. Pendik Lisesi öğrencisi veya 
+                Pendik Lisesinde çalışan personelin yakınları kazandıkları bursa istinaden 
+                ekstra %10 burs kazanıyorlar. İnşallah Gedikle başladık Piri Reis 
+                Üniversitesiyle görüşmelerimiz oldu onlarla da öğrencilerimizin menfaatine 
+                olan birçok üniversite ile bu tür protokoller yapacağız. Yani protokolleri 
+                sadece öğrencilerimiz burs kazansın diye yapmıyoruz ayrıca üniversitenin 
+                akademik kadrosundan istifade ederek öğrencilerimizin daha iyi yetişmesini 
+                sağlamaya çalışıyoruz. Mesela cuma günü eski görev yaptığım okulun bir derneği 
+                var, davet ettiler sohbet ettik. Eskiyle günümüz arasındaki fark; eskiden 
+                okula gelirken öğrencilerin yanında kitap, dergi, gazete vardı şimdi maalesef 
+                cep telefonu var bu da eğitimi olumsuz etkilemektedir.
+                <br>
+                <br>
+                Değerli vaktinizi ayırdığınız için teşekkür ederiz.
+                <br>
+                <br>
+                Ben teşekkür ederim Aylin, başarılar dilerim. 
+                <br>
+            </p>
+            <p style="text-align: right;">
+                Aylin Buluz
+                <br> 
+                Öğrenci
+            </p>
+            
+        </section>
+
+
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2025 Genç Bakışlar. Tüm Hakları Saklıdır.</p>
+        <p>Design by <a href="roportaj.html">Genç Bakışlar</a></p>
+    </footer>
+</body>
+</html>

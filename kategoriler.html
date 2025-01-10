@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Genç Bakışlar | Kategoriler</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+    <style>
+    /* Yukarı Kaydır Butonunun Stili */
+    .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        display: none; /* Sayfa aşağı kayana kadar görünmez */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .scroll-to-top:hover {
+        background-color: #0056b3;
+        transform: scale(1.1);
+    }
+    </style>
+    
+    <script>
+    // Yukarı Kaydır Butonu için JavaScript
+    document.addEventListener("DOMContentLoaded", function () {
+        const scrollToTopButton = document.getElementById("scrollToTop");
+    
+        // Butonu göster/gizle
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 200) {
+                scrollToTopButton.style.display = "flex";
+            } else {
+                scrollToTopButton.style.display = "none";
+            }
+        });
+    
+        // Tıklanınca yukarı kaydır
+        scrollToTopButton.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    });
+    </script>    
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .category-header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        .category-header .btn {
+            margin-top: 10px;
+            color: white;
+        }
+
+        .categories {
+            padding: 40px 15px;
+        }
+
+        .category-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+ /* object-fit: cover; (boyutun sığdırılmasını sağlar)  kaldırıldı  */
+        }
+
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-item a {
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .category-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Üst Menü -->
+    <header class="category-header">
+                <!-- Sol Üst Fotoğraf Alanı -->
+                <div class="header-images">
+                    <a href="index.html"><img src="emojiler/geri butonu.png" alt="Geri Butonu İcon"></a>
+                    
+                </div>
+                <style>
+                            /* Sol Üst Fotoğraf Alanı */
+                .header-images {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    display: flex;
+                    gap: 10px;
+                }
+        
+                .header-images a img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 5px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+        
+                .header-images a img:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                }
+                </style>
+        <h1>Kategoriler</h1>
+    </header>
+
+    <!-- Kategoriler -->
+    <section class="categories container">
+        <div class="category-item">
+            <img src="emojiler/bilimm.png" alt="Bilim ve Sanat">
+            <a href="bilim.html">Bilim</a>
+        </div>
+        <div class="category-item">
+            <img src="emojiler/kulturveedebiyat.png" alt="Kültür ve Edebiyat">
+            <a href="kulturveedebiyat.html">Kültür ve Edebiyat</a>
+        </div>
+        <div class="category-item">
+            <img src="emojiler/etkinlikler.png" alt="Etkinliklerimiz">
+            <a href="etkinlikleriniz.html">Etkinliklerimiz</a>
+        </div>
+        <div class="category-item">
+            <img src="emojiler/tubitak.png" alt="TÜBİTAK">
+            <a href="tubitak.html">TÜBİTAK</a>
+        </div>
+        <div class="category-item">
+            <img src="emojiler/ozelgunler.png" alt="Özel Günler">
+            <a href="ozelgunler.html">Özel Günler</a>
+        </div>
+        <div class="category-item">
+            <img src="emojiler/astronomiveuzayy.png" alt="Astronomi ve Uzay">
+            <a href="astronomiveuzay.html">Astronomi ve Uzay</a>
+        </div>
+        <div class="category-item">
+            <img src="emojiler/gezilerimiz.png" alt="Gezilerimiz">
+            <a href="gezilerimiz.html">Gezilerimiz</a>
+        </div>
+        <div class="category-item">
+            <img src="emojiler/röpotaj.png" alt="Röportaj">
+            <a href="roportaj.html">Röportaj</a>
+        </div>
+        <div class="category-item">
+            <img src="emojiler/derecelerimizz.png" alt="Derecelerimiz">
+            <a href="derecelerimiz.html">Derecelerimiz</a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

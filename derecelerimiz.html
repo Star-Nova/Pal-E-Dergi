@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/ozelgunler.png" type="image/png">
+    <title>Genç Bakışlar | Derecelerimiz</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <link rel="stylesheet" href="style.css">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+
+<!-- Site Genel CSS  -->  
+    <style>
+        /* Genel Sayfa Stilleri */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h1, h2 {
+            color: #222;
+        }
+
+        /* Header Stili */
+        header {
+            background: linear-gradient(135deg, #36454F, #40E0D0);
+            padding: 60px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: none;
+        }
+
+        nav {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            background: #40E0D0;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #36454F;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+        }
+
+        /* Ana İçerik Bölümü */
+        main {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        section {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #36454F;
+        }
+
+        section p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        section img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Butonlar */
+        .button {
+            display: inline-block;
+            margin: 20px 10px 0;
+            padding: 10px 30px;
+            background-color: #36454F;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #40E0D0;
+            color: #333;
+            transform: translateY(-3px);
+        }
+
+        .button:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px rgba(255, 69, 0, 0.5);
+        }
+
+        /* Footer Stili */
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            font-weight: bold;
+            color: #40E0D0;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #36454F;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+            
+        }
+    </style>
+
+<!-- Özel Günler Yazısı CSS  -->
+    <style>
+        header h1 {
+    color: #fff; /* Beyaz renk */
+    font-size: 3em; /* Yazı boyutu */
+    font-weight: 700; /* Kalınlık */
+    letter-spacing: 2px; /* Harfler arası boşluk */
+    text-transform: none; /* Tamamen büyük harf */
+}
+    </style>
+
+</head>
+<body>
+    <header>
+                <!-- Sol Üst Fotoğraf Alanı -->
+                <div class="header-images">
+                    <a href="index.html"><img src="emojiler/geri butonu.png" alt="Geri Butonu İcon"></a>
+                    <a href="kategoriler.html"><img src="emojiler/kategoriler.png" alt="Kategoriler İcon"></a>
+                    <a href="index.html"><img src="emojiler/ev.png" alt="Kategoriler İcon"></a>
+                </div>
+                <style>
+                            /* Sol Üst Fotoğraf Alanı */
+                .header-images {
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    display: flex;
+                    gap: 10px;
+                }
+        
+                .header-images a img {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 5px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+        
+                .header-images a img:hover {
+                    transform: scale(1.1);
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+                }
+                </style>
+                
+      <h1 class="derecelerimiz">Derecelerimiz</h1>
+      <nav>
+          <ul>
+              <li><a href="#dragonbot">Dragon Bot Yarışı</a></li>
+              <li><a href="#kickboks">Kickboks İstanbul Şampiyonası</a></li>              
+              <li><a href="#iletisim">İletişim</a></li>
+          </ul>
+      </nav>
+    
+<!-- Arama Butonu -->
+    <li style="list-style: none; margin-right: 10px;">
+        <div class="search-container" style="position: relative; display: inline-block;">
+          <input type="text" id="searchInput" placeholder="Arama Yap..." 
+                 style="width: 200px; padding: 10px 15px; border-radius: 20px; border: 2px solid black; outline: none; font-size: 14px; transition: width 0.3s ease;">
+          <button onclick="handleSearch()" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background-color: black; color: #fff; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </li>
+<!-- Aratıla Bilecek Kelimeler -->      
+      <script>
+        function handleSearch() {
+          const searchInput = document.getElementById("searchInput").value.toLowerCase();
+          switch (searchInput) {
+            case "Dragon Bot Yarışı":
+              window.location.href = "dragon-bot-yarisi-kizlar.html";
+              break;
+            case "dragon bot yarışı":
+              window.location.href = "dragon-bot-yarisi-kizlar.html";
+              break;
+            case "Kickboks":
+              window.location.href = "kickboks-istanbul-sampiyonasi.html";
+              break;
+            case "kickboks":
+              window.location.href = "kickboks-istanbul-sampiyonasi.html";
+              break;
+
+            default:
+              alert("Aradığınız kelime bulunamadı.");
+          }
+        }
+      
+        // Optional: Expand input field when focused
+        document.getElementById("searchInput").addEventListener("focus", function() {
+          this.style.width = "250px";
+        });
+        document.getElementById("searchInput").addEventListener("blur", function() {
+          this.style.width = "200px";
+        });
+      </script>
+        </nav>
+    </header>
+
+
+    <main>
+        <!-- Dragon Bot Yarışı -->
+        <section id="dragonbot">
+            <h2>Dragon Bot Yarışı</h2>
+            <p style="text-align: justify;">Pendik Belediyesi'nin düzenlediği, 26 okulun katıldığı 29 Ekim 2024 Pendik Belediyesi Cumhuriyet Kupası Dragon Bot yarışlarında Pendik Anadolu Lisesi genç kız takımı Pendik üçüncüsü olmuştur. Genç erkek takımı da Pendik sekizincisi olmuştur. Emeği geçen Beden eğitimi öğretmenimiz Mustafa ALICI'yı ve yarışlara katılan tüm öğrencilerimizi tebrik eder, başarılarının devamını dileriz. 🛶🇹🇷</p>
+            <img src="derecelerimiz/Dragon/Dragon Bot Yarışı Fotoğraf1.png" alt="Dragon Bot Yarışı">
+            <!-- Dragon Bot Yarışı linki -->
+            <button class="button" onclick="window.location.href='dragon-bot-yarisi-kizlar.html'">Daha Fazla Oku</button>
+        </section>
+        <!-- Kickboks İstanbul Şampiyonası  -->
+        <section id="kickboks">
+            <h2>Kickboks İstanbul Şampiyonası </h2>
+            <p style="text-align: justify;">23-27 Aralık 2024 tarihleri arasında İstanbul Bağcılar'da yapılan "Okullararası Kickboks İstanbul Şampiyonası"nda 50 Kg Genç Bayan A kategorisinde okulumuzu temsil eden 11. Sınıf öğrencimiz Sunanaz ÖZKOL İstanbul şampiyonu olmuştur. Şampiyon öğrencimizi tebrik eder, başarılarının devamını dileriz.</p>
+            <img src="derecelerimiz//Kickboks/Kickboks Fotoğraf1.jpg" alt="Kickboks Kazananın Fotoğrafı">
+            <!-- Dragon Bot Yarışı linki -->
+            <button class="button" onclick="window.location.href='kickboks-istanbul-sampiyonasi.html'">Daha Fazla Oku</button>
+        </section>
+
+    </main>
+    
+
+    <footer id="iletisim">
+        <p>&copy; 2025 Genç Bakışlar Tüm hakları saklıdır.</p>
+        <p>Design: <a href="index.html">Genç Bakışlar</a></p>       
+    </footer>
+</body>
+</html>
+

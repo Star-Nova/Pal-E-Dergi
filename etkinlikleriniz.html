@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/ozelgunler.png" type="image/png">
+    <title>Genç Bakışlar | Etkinliklerimiz</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <link rel="stylesheet" href="style.css">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+
+<!-- Site Genel CSS  -->  
+    <style>
+        /* Genel Sayfa Stilleri */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h1, h2 {
+            color: #222;
+        }
+
+        /* Header Stili */
+        header {
+            background: linear-gradient(135deg, #ff4500, #ffcc00);
+            padding: 60px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: none;
+        }
+
+        nav {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            background: #a93105;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #ff4500;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+        }
+
+        /* Ana İçerik Bölümü */
+        main {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        section {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff4500;
+        }
+
+        section p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        section img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Butonlar */
+        .button {
+            display: inline-block;
+            margin: 20px 10px 0;
+            padding: 10px 30px;
+            background-color: #ff4500;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #ffcc00;
+            color: #333;
+            transform: translateY(-3px);
+        }
+
+        .button:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px rgba(255, 69, 0, 0.5);
+        }
+
+        /* Footer Stili */
+        footer {
+            background: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+
+        footer a {
+            font-weight: bold;
+            color: #ff4500;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffcc00;
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+            
+        }
+    </style>
+
+<!-- Özel Günler Yazısı CSS  -->
+    <style>
+        header h1 {
+    color: #fff; /* Beyaz renk */
+    font-size: 3em; /* Yazı boyutu */
+    font-weight: 700; /* Kalınlık */
+    letter-spacing: 2px; /* Harfler arası boşluk */
+}
+    </style>
+
+</head>
+<body>
+    <header>
+              <!-- Sol Üst Fotoğraf Alanı -->
+              <div class="header-images">
+                <a href="index.html"><img src="emojiler/geri butonu.png" alt="Geri Butonu İcon"></a>
+                <a href="kategoriler.html"><img src="emojiler/kategoriler.png" alt="Kategoriler İcon"></a>
+                <a href="index.html"><img src="emojiler/ev.png" alt="Kategoriler İcon"></a>
+            </div>
+            <style>
+                        /* Sol Üst Fotoğraf Alanı */
+            .header-images {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                display: flex;
+                gap: 10px;
+            }
+    
+            .header-images a img {
+                width: 50px;
+                height: 50px;
+                border-radius: 5px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+    
+            .header-images a img:hover {
+                transform: scale(1.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            }
+            </style>
+            
+      <h1 class="ozelgunler">Etkinliklerimiz</h1>
+      <nav>
+          <ul>
+              <li><a href="#panolar">Okul ve Sınıf Panoları</a></li>
+              <li><a href="#sinif-ici-etkinlikler">Sınıf İçi Etkinlikler</a></li>
+              <li><a href="#vali-bey">Vali Bey</a></li>
+              <li><a href="#kızılay">Gençlerden Kızılay'a Anlamlı Destek</a></li>
+              <li><a href="#fatma-yesim">Dijital Dünyada Bilinçli Adımlar</a></li>
+              <li><a href="#erten-gökce">Etkili Çalışma Teknikleri</a></li> 
+              <li><a href="#fuat-sezgin">Bilim Tarihine Adanan Ömür</a></li>
+              <li><a href="#kitap-fuarı">Pendik 9. Kitap Fuarı</a></li>
+              <li><a href="#kudüs">Kudüs'ün Önemi</a></li>
+              <li><a href="#keman">Keman Resitali</a></li>
+              <li><a href="#ilkyardim">İlk Yardım</a></li>
+              <li><a href="#sinavkaygisi">Sınav Kaygısı ve Motivasyon</a></li>              
+              <li><a href="#iletisim">İletişim</a></li>
+          </ul>
+      </nav>
+    
+<!-- Arama Butonu -->
+    <li style="list-style: none; margin-right: 10px;">
+        <div class="search-container" style="position: relative; display: inline-block;">
+          <input type="text" id="searchInput" placeholder="Arama Yap..." 
+                 style="width: 200px; padding: 10px 15px; border-radius: 20px; border: 2px solid black; outline: none; font-size: 14px; transition: width 0.3s ease;">
+          <button onclick="handleSearch()" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background-color: black; color: #fff; border: none; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </li>
+<!-- Aratıla Bilecek Kelimeler -->      
+      <script>
+        function handleSearch() {
+          const searchInput = document.getElementById("searchInput").value.toLowerCase();
+          switch (searchInput) {
+            case "Okul ve Sınıf Panoları":
+              window.location.href = "panolar.html";
+              break;
+            case "panolar":
+              window.location.href = "panolar.html";
+              break;
+            case "Panolar":
+              window.location.href = "panolar.html";
+              break;
+            case "sınıf içi etkinlikler":
+              window.location.href = "sinificietkinlikler.html";
+              break;
+            case "Sınıf İçi Etkinlikler":
+              window.location.href = "sinificietkinlikler.html";
+              break;
+            case "Vali Bey":
+              window.location.href = "valiziyareti.html";
+              break;
+            case "vali bey":
+              window.location.href = "valiziyareti.html";
+              break;
+            case "kızılay":
+              window.location.href = "genckızılaycılar.html";
+              break;
+            case "Kızılay":
+              window.location.href = "genckızılaycılar.html";
+              break;
+            case "genç kızılaycılar":
+              window.location.href = "genckızılaycılar.html";
+              break;
+            case "Genç Kızılaycılar":
+              window.location.href = "genckızılaycılar.html";
+              break;
+            case "Fatma Yeşim Can":
+              window.location.href = "genckızılaycılar.html";
+              break;
+            case "fatma yeşim can":
+              window.location.href = "dijital-bagimlilik-egitimi-fatmayesim.html";
+              break;
+            case "Erten Gökçe":
+              window.location.href = "tkili-calisma-teknikleri-ertengökce.html";
+              break;
+            case "erten gökçe":
+              window.location.href = "tkili-calisma-teknikleri-ertengökce.html";
+              break;
+            case "Fuat Sezgin":
+              window.location.href = "bilim-tarihine-adanan-omur.html";
+              break;
+            case "fuat sezgin":
+              window.location.href = "bilim-tarihine-adanan-omur.html";
+              break;
+            case "Kitap Fuarı":
+              window.location.href = "kitapfuari.html";
+              break;
+            case "kitap fuarı":
+              window.location.href = "kitapfuari.html";
+              break;
+            case "Kudüs":
+              window.location.href = "kudüs-önemi.html";
+              break;
+            case "kudüs":
+              window.location.href = "kudüs-önemi.html";
+              break;
+            case "Keman Resitali":
+              window.location.href = "kemanresitali.html";
+              break;
+            case "keman resitali":
+              window.location.href = "kemanresitali.html";
+              break;
+            case "İlk Yardım":
+              window.location.href = "ilkyardim.html";
+              break;
+            case "ilk yardım":
+              window.location.href = "ilkyardim.html";
+              break;
+            case "Sınav Kaygısı ve Motivasyon ile Doğru Meslek Seçimi":
+              window.location.href = "sinavkaygisi.html";
+              break;
+            case "sınav kaygısı ve motivasyon ile doğru meslek seçimi":
+              window.location.href = "sinavkaygisi.html";
+              break;
+                        
+            default:
+              alert("Aradığınız kelime bulunamadı.");
+          }
+        }
+      
+        // Optional: Expand input field when focused
+        document.getElementById("searchInput").addEventListener("focus", function() {
+          this.style.width = "250px";
+        });
+        document.getElementById("searchInput").addEventListener("blur", function() {
+          this.style.width = "200px";
+        });
+      </script>
+        </nav>
+    </header>
+
+
+    <main>
+<!-- Okul ve Sınıf Panoları -->
+        <section id="panolar">
+            <h2>Okul ve Sınıf Panoları</h2>
+            <p style="text-align: justify;"> Okul ve sınıf panolarında, öğrencilerimizin etkinliklerden ve başarılarından fotoğraflar yer almaktadır. Bu fotoğraflar, okul yaşamımızdaki önemli anları yansıtarak, öğrencilerimizin başarılarını ve güçlü bağlarını görsel olarak kutlar. Panolar, geçmiş başarıları hatırlatırken, geleceğe yönelik motivasyon kaynağı oluşturur.</p>
+            <img src="etkinlikler foto/Panolar Kapak Fotoğrafı.png" alt="Okul ve Sınıf Panoları">
+            <!-- kul ve Sınıf Panoları linki -->
+            <button class="button" onclick="window.location.href='panolar.html'">Daha Fazla Oku</button>
+        </section>
+<!-- Sınıf İçi Etkinlikler -->
+        <section id="sinif-ici-etkinlikler">
+            <h2>Sınıf İçi Etkinlikler</h2>
+            <p style="text-align: justify;">Eğitim sürecini daha etkili, eğlenceli ve unutulmaz hale getirmek için düzenlediğimiz sınıf içi etkinlikler, katılımcılarımıza hem bilgi hem de keyif dolu anlar yaşattı. İşte geçmişte düzenlediğimiz bazı etkinliklerden ilham verici örnekler:</p>
+            <img src="sınıf içi etkinlikler/Sınıf içi etkinliklerle ilgili fotoğraf, sınıfı da kullan.png" alt="Sınıf İçi Etkinlikler">
+            <!-- Sınıf İçi Etkinlikler linki -->
+             <br>
+            <button class="button" onclick="window.location.href='sinificietkinlikler.html'">Daha Fazla Oku</button>
+        </section>
+<!-- Valimiz Sayın Davut Gül Pendik Anadolu Lisesi'nde -->
+        <section id="vali-bey">
+            <h2>Valimiz Sayın Davut Gül Pendik Anadolu Lisesinde</h2>
+            <p style="text-align: justify;">Milli Eğitim Bakanlığımız ve İçişleri Bakanlığımızın koordinesinde Narkotik Suçlarla Mücadele Daire Başkanlığınca çocuklarda ve gençlerde uyuşturucu ve zararlı madde kullanımının önüne geçmek, mücadelede annelerin farkındalığının artırılması ve anne duyarlılığından hareketle daha güvenli toplumu inşa etmek için başlatılan "En İyi Narkotik Polisi Anne" semineri, İstanbul Valimiz Sayın Davut Gül'ün katılımıyla okulumuzda gerçekleştirildi. Seminere Pendik Kaymakamımız Mehmet Yıldız, Pendik Belediye Başkanımız Ahmet Cin, İlçe Milli Eğitim Şube Müdürlerimiz, okul idarecilerimiz ve tüm okullarımızdan gelen velilerimiz katılım sağladılar.</p>
+            <img src="etkinlikler foto/Vali Bey/Vali Bey Fotoğraf 1.png" alt="Vali Bey">
+            <!-- Valimiz Sayın Davut Gül Pendik Anadolu Lisesi'nde linki -->
+             <br>
+            <button class="button" onclick="window.location.href='valiziyareti.html'">Daha Fazla Oku</button>
+        </section>
+
+<!-- Genç Kızlaycılar -->
+        <section id="kızılay">
+            <h2>Gençlerden Kızılay'a Anlamlı Destek</h2>
+            <p style="text-align: justify;">Pendik Anadolu Lisesi ve Pendik Genç Kızılay işbirliğiyle, 10. Sınıf öğrencilerimizin sosyal sorumluluk etkinliği kapsamında değerli destekleriyle, Pendik Kızılay Gençlik Kampı’nda bulunan kıyafetleri ihtiyaç sahiplerine ulaştırmak üzere Kızılay Lojistik Deposuna gönderdik. Bu anlamlı katkılar sayesinde kıyafetler, depolardan ihtiyaç sahibi ailelere ulaştırılacak ve onların yaşamlarına bir nebze olsun dokunmuş olacağız.
+
+                Bu dayanışma ve yardımlaşma ruhunu yaşatan tüm öğretmenlerimize, öğrencilerimize ve Genç Kızılay'a teşekkür ederiz.</p>
+            <img src="etkinlikler foto/Genç Kızılaycılar/Genç Kızılaycılar Fotoğraf1.png" alt="Gençlerden Kızılay'a Anlamlı Destek">
+            <!-- Genç Kızlaycılar -->
+             <br>
+            <button class="button" onclick="window.location.href='genckızılaycılar.html'">Daha Fazla Oku</button>
+        </section>
+
+<!-- Dijital Dünyada Bilinçli Adımlar: Doç. Dr. Fatma Yeşim Can’ın Sunumu -->
+        <section id="fatma-yesim">
+            <h2>Dijital Dünyada Bilinçli Adımlar: Doç. Dr. Fatma Yeşim Can’ın Sunumu</h2>
+            <p style="text-align: justify;">Doç. Dr. Fatma Yeşim Can, öğrencilerimize yönelik dijital bağımlılık, hayatımıza olumsuz etkileri ve bilinçli internet kullanımı konusunda bilgi verdi. Öğrencilerimizin sorularını yanıtladı. Kendilerine ve İstanbul Gedik Üniversitesi'ne teşekkür ederiz.</p>
+            <img src="etkinlikler foto/Dijital Dünyada Bilinçli Adımlar/Doç Dr Fatma Yeşim Cam Fotoğraf3.png" alt="Doç. Dr. Fatma Yeşim Can">
+            <!-- Dijital Dünyada Bilinçli Adımlar: Doç. Dr. Fatma Yeşim Can’ın Sunumu linki -->
+             <br>
+            <button class="button" onclick="window.location.href='dijital-bagimlilik-egitimi-fatmayesim.html'">Daha Fazla Oku</button>
+        </section>
+
+<!-- Etkili Çalışma Teknikleri ve Sınavda Başarı Stratejileri -->
+        <section id="erten-gökce">
+            <h2>Etkili Çalışma Teknikleri ve Sınavda Başarı Stratejileri</h2>
+            <p style="text-align: justify;">Ankara Üniversitesi Öğretim Üyesi Sn. Prof.Dr. Erten Gökçe 11. sınıf öğrencilerimize "Etkili çalışma teknikleri ve sınavda başarı stratejileri" konulu seminer verdi. Değerli Hocamıza katkılarından dolayı teşekkür ederiz.</p>
+            <img src="etkinlikler foto/Etkili Çalışma Teknikleri/Prof.Dr. Erten Gökçe Fotoğraf0.jpg" alt="Erten Gökçe">
+            <!-- Etkili Çalışma Teknikleri ve Sınavda Başarı Stratejileri -->
+             <br>
+            <button class="button" onclick="window.location.href='etkili-calisma-teknikleri-ertengökce.html'">Daha Fazla Oku</button>
+        </section>
+
+<!-- Bilim Tarihine Adanan Ömür/Kırk Deste :  Prof Dr Fuat Sezgin -->
+        <section id="fuat-sezgin">
+            <h2>Bilim Tarihine Adanan Ömür/Kırk Deste :  Prof. Dr. Fuat Sezgin</h2>
+            <p style="text-align: justify;">Bilim Tarihine Adanan Ömür/Kırk Deste Prof Dr Fuat Sezgin adlı kitabıyla ilgili söyleşi yapmak üzere okulumuza gelen eğitimci yazar Cumali Sever öğrencilerle buluştu. Konusmasinin sonunda kendi kitaplarindan hediye ederek imzaladı.</p>
+            <img src="etkinlikler foto/Bilim Tarihine Adanan Ömür/Prof Dr Fuat Sezgin Fotoğraf1.png" alt="Prof Dr Fuat Sezgin">
+            <!-- Bilim Tarihine Adanan Ömür/Kırk Deste :  Prof Dr Fuat Sezgin Linki -->
+             <br>
+            <button class="button" onclick="window.location.href='bilim-tarihine-adanan-omur.html'">Daha Fazla Oku</button>
+        </section>
+
+<!-- Pendik 9. Kitap Fuar -->
+        <section id="kitap-fuarı">
+            <h2>Pendik 9. Kitap Fuarı</h2>
+            <p style="text-align: justify;">Pendik Anadolu Lisesi, Pendik Belediyesinin Pendik sahil alanında geleneksel olarak her yıl açtığı kitap fuarına Okul Müdürü Halil Yıldız önderliğinde bir grup öğrenciyle katıldı. Açılış töreninden sonra öğrenciler yayınevlerinin standlarını inceledi.
+                Öğrencilerimiz yetkililerle yararlı sohbetler etti. Bu tür faydalı etkinliklere yeniden katılmak dileğiyle okula dönüş yapıldı.</p>
+            <img src="etkinlikler foto/Pendik 9. Kitap Fuarı/Pendik 9. Kitap Fuarı Fotoğraf1.png" alt="Pendik 9. Kitap Fuarı">
+            <!-- Pendik 9. Kitap Fuarı Linki -->
+             <br>
+            <button class="button" onclick="window.location.href='kitapfuari.html'">Daha Fazla Oku</button>
+        </section>
+<!-- Kudüs'ün Tarihteki Yeri ve Önemi -->
+        <section id="kudüs">
+          <h2>Kudüs'ün Tarihteki Yeri ve Önemi</h2>
+          <p style="text-align: justify;">Kartal Mehmet Akif Ersoy İmam Hatip Lisesi Öğretmeni Adem Yenihayat, öğrencilerimizle "Kudüs'ün tarihteki yeri ve önemi" temalı bir sohbet gerçekleştirdi. Programa Pendik İlçe Milli Eğitim Şube Müdürü Talip Demir, Okul Müdürümüz Halil Yıldız ve öğretmenlerimiz katıldı. Adem Yenihayat'a gerçekleştirdiği etkili, anlamlı ve güzel sohbetinden dolayı teşekkür ederiz.</p>
+          <img src="etkinlikler foto/Kudüs'ün Önemi/Kudüs Önemi Konuşma Fotoğraf1.png" alt="Kudüs'ün Tarihteki Yeri ve Önemi">
+          <!-- Kudüs'ün Tarihteki Yeri ve Önemi lnki -->
+           <br>
+          <button class="button" onclick="window.location.href='kudüs-önemi.html'">Daha Fazla Oku</button>
+      </section>
+<!-- Keman Resitali -->
+        <section id="keman">
+          <h2>Keman Resitali</h2>
+          <p style="text-align: justify;">Pendik Belediyesinin organize ettiği Pendik Sanat Akademisi keman kursu hocası TRT sanatçısı Alper Asutay ve arkadaşları, okulumuzda öğrencilerimize ve öğretmenlerimize unutulmaz bir konser verdiler. Sanatçımız Alper Asutay ve arkadaşlarına düzenledikleri keman resitalinden dolayı teşekkür ediyoruz</p>
+          <img src="etkinlikler foto/Keman Resitali/Keman Resitali Fotorğaf1.jpg" alt="Keman Resitali Fotoğraf">
+          <!-- Keman Resitali lnki -->
+           <br>
+          <button class="button" onclick="window.location.href='kemanresitali.html'">Daha Fazla Oku</button>
+      </section>
+<!-- İlk Yardım -->
+        <section id="ilkyardim">
+          <h2>İlk Yardım</h2>
+          <p style="text-align: justify;">Milli Eğitim Bakanlığı'nın "Görevimiz İlk Yardım" sloganı ile başlatılmış olan öğretmen, öğrenci ve velilerimizde ilk yardım bilincinin geliştirilmesi, hedeflenen yaralanma ve sakatlanmaların azaltılması amacıyla yürütülen "Çocuklarımız İlk Yardımla Daha Güvende" projesi kapsamında öğrencilerimize eğitim görevlisi Nurcan Hanım tarafından ilk yardım semineri verildi.</p>
+          <img src="etkinlikler foto/İlk Yardım/İlk Yardım Kapak Fotoğraf.jpg" alt="Keman Resitali Fotoğraf">
+          <!-- İlk Yardım lnki -->
+           <br>
+          <button class="button" onclick="window.location.href='ilkyardim.html'">Daha Fazla Oku</button>
+      </section>
+<!-- Sınav Kaygısı ve Motivasyon ile Doğru Meslek Seçimi -->
+        <section id="sinavkaygisi">
+          <h2>Sınav Kaygısı ve Motivasyon ile Doğru Meslek Seçimi</h2>
+          <p style="text-align: justify;">Yakın Doğu Üniversitesi Öğretim Üyesi Sn. Prof. Dr. Aşkın KİRAZ öğrencilerimize "Sınav Kaygısı ve Motivasyon ile Doğru Meslek Seçimi " konulu seminer verdi. Değerli Hocamıza katkılarından dolayı teşekkür ederiz.</p>
+          <img src="etkinlikler foto/Sınav Kaygısı ve Motivasyon/Sınav Kaygısı Fotoğraf1.jpg" alt="Keman Resitali Fotoğraf">
+          <!-- Sınav Kaygısı ve Motivasyon ile Doğru Meslek Seçimi lnki -->
+           <br>
+          <button class="button" onclick="window.location.href='sinavkaygisi.html'">Daha Fazla Oku</button>
+      </section>
+    </main>
+    
+
+    <footer id="iletisim">
+        <p>&copy; 2025 Genç Bakışlar Tüm hakları saklıdır.</p>
+        <p>Design: <a href="index.html">Genç Bakışlar</a></p>       
+    </footer>
+</body>
+</html>
+

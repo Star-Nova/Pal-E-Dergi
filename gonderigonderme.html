@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Gönderi Gönder</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .post-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #444;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .user-info p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .file-upload {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .file-list {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #333;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        #file-input {
+            display: none;
+        }
+
+        .upload-button {
+            background: #2575fc;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        button {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #2575fc;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <a href="index.html" class="back-button">← Geri</a>
+        <h1>Gönderi Gönder</h1>
+
+        <div class="user-info">
+            <p id="user-name">Ad Soyad: John Doe</p>
+        </div>
+
+        <div class="form-group">
+            <label for="title">Başlık</label>
+            <input type="text" id="title" placeholder="Başlık giriniz">
+        </div>
+
+        <div class="form-group">
+            <label for="content">Metin</label>
+            <textarea id="content" placeholder="Metin giriniz"></textarea>
+        </div>
+
+        <div class="file-upload">
+            <button class="upload-button" id="upload-file">Dosya Ekle</button>
+            <input type="file" id="file-input" multiple>
+            <ul id="file-list" class="file-list"></ul>
+        </div>
+
+        <button id="submit-post">Gönder</button>
+    </div>
+
+    <script>
+        const userName = localStorage.getItem("userName") || "John Doe";
+        document.getElementById("user-name").textContent = `Ad Soyad: ${userName}`;
+
+        const fileInput = document.getElementById("file-input");
+        const uploadButton = document.getElementById("upload-file");
+        const fileList = document.getElementById("file-list");
+
+        uploadButton.addEventListener("click", () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener("change", (event) => {
+            fileList.innerHTML = "";
+            const files = event.target.files;
+            for (let i = 0; i < files.length; i++) {
+                const li = document.createElement("li");
+                li.textContent = files[i].name;
+                fileList.appendChild(li);
+            }
+        });
+
+        document.getElementById("submit-post").addEventListener("click", () => {
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+
+            if (!title || !content) {
+                alert("Lütfen başlık ve metin giriniz.");
+                return;
+            }
+
+            // Gönderi bilgilerini URL ile gonderi-düsecek-yer.html sayfasına yönlendir
+            const files = Array.from(fileInput.files).map(file => file.name).join(", ");
+            const postData = { title, content, files, userName };
+
+            // Verileri localStorage'a kaydediyoruz.
+            const existingPosts = JSON.parse(localStorage.getItem('posts')) || [];
+            existingPosts.push(postData);
+            localStorage.setItem('posts', JSON.stringify(existingPosts));
+
+            window.location.href = 'gonderi-düsecek-yer.html';
+        });
+    </script>
+</body>
+</html>

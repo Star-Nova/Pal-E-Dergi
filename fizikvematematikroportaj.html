@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon/pendik_logo.png" type="image/png">
+    <title>Genç Bakışlar | Fizik ve Matematik Üzerine Bir Röportaj</title>
+    <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+    <!-- Yukarı Kaydır Butonu -->
+<button id="scrollToTop" class="scroll-to-top" title="Yukarı Çık">&#8679;</button>
+
+<style>
+/* Yukarı Kaydır Butonunun Stili */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Sayfa aşağı kayana kadar görünmez */
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+</style>
+
+<script>
+// Yukarı Kaydır Butonu için JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Butonu göster/gizle
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    });
+
+    // Tıklanınca yukarı kaydır
+    scrollToTopButton.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        /* Başlık */
+        header {
+            background: linear-gradient(135deg, #004d40, #26a69a);
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        /* Navigasyon */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: #004d40;
+        }
+
+        /* Ana İçerik */
+        main {
+            padding: 50px 20px;
+        }
+
+        section {
+            margin: 40px auto;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            color: #004d40;
+        }
+
+        section p {
+            font-size: 1.2em;
+            margin: 20px auto;
+            max-width: 900px;
+            text-align: justify;
+        }
+
+        /* Galeri */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 1px solid white;
+        }
+
+        footer a:hover {
+            color: #26a69a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .gallery img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+            <!-- Sol Üst Fotoğraf Alanı -->
+            <div class="header-images">
+                <a href="roportaj.html"><img src="emojiler/geri butonu.png" alt="Geri Butonu İcon"></a>
+                <a href="kategoriler.html"><img src="emojiler/kategoriler.png" alt="Kategoriler İcon"></a>
+                <a href="index.html"><img src="emojiler/ev.png" alt="Kategoriler İcon"></a>
+            </div>
+            <style>
+                        /* Sol Üst Fotoğraf Alanı */
+            .header-images {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                display: flex;
+                gap: 10px;
+            }
+    
+            .header-images a img {
+                width: 50px;
+                height: 50px;
+                border-radius: 5px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+    
+            .header-images a img:hover {
+                transform: scale(1.1);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            }
+                    /* Butonlar */
+        .button {
+            display: inline-block;
+            margin: 20px 10px 0;
+            padding: 10px 30px;
+            background-color: #004d40;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .button:hover {
+            background-color: #26a69a;
+            color: #333;
+            transform: translateY(-3px);
+        }
+
+        .button:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px rgba(255, 69, 0, 0.5);
+        }
+            </style>
+            
+    <header>
+        <h1>Fizik ve Matematik Üzerine Bir Röportaj</h1>
+        <p>Fizik ve Matematik Üzerine Unutulmaz Bir Röportaj!</p>
+        <nav>
+            <ul>
+                <li><a href="#about">Hakkında</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Fizik ve Matematik Üzerine Bir Röportaj </h2>
+            <p style="text-align: justify;" >Pendik Anadolu Lisesi öğrencileri ve matematik öğretmenimiz Deniz DENİZKUŞU, 
+                müdür yardımcımız Banu GÜNDOĞAN'la birlikte İstanbul Üniversitesi Fen 
+                Fakültesi Dekanı ve ayrıca Astronomi ve Uzay Bilimleri Bölüm Başkanı olan 
+                Sayın Tansel AK ile birlikte hoş bir sohbet gerçekleştirdik. Güzel duyguların 
+                hakim olduğu bir atmosferde sıcak çaylarımızı yudumlarken yaptığımız 
+                röportajdan büyük keyif aldık. Tatlı söyleşiden dolayı Tansel AK Hocamıza 
+                teşekkürlerimizi sunarız. 
+                <br>
+                <br>
+                - Öğrenci: ‘’Evreni bir şekil ile tanımlayacak olsanız bu şekil ne olurdu?’’ 
+                <br>
+                <br>
+                - Tansel AK: ‘’Evreni bir şekil ile tanımlayamazsınız. Elimizde bir sonuca 
+                ulaşabileceğimiz ne gözlemimiz ne de hesabımız var aslında. Daha çok 
+                anlatabilmek için ‘Big Bang ile birlikte bir balonun yüzeyindeymiş gibi 
+                düşünülür, balon şiştikçe evren de genişler’ şeklinde açıklanır. ‘Genişlemek’ 
+                tarif etmek için kullanılıyor ama o genişlemeyi evren için tanımlayamıyoruz. 
+                Evrende hangi yöne bakarsak homojen ve izotopik olduğunu gözlemliyoruz.’’
+                <br>
+                <br>
+                - Öğrenci: ‘’Fizik biliminin Türkiye’deki yeri veyahut çalışma alanındaki 
+                konumu ile ilgili görüşleriniz nelerdir?’’
+                <br>
+                <br>
+                -Tansel AK: ‘’Türkiye’nin dikkate değer ve akıllıca bir bilim politikası olmadığı için temel bilimler olması 
+                gerektiği kadar desteklenmiyor. Bunun sonucu olarak da fizik biliminin geleceği nedir diye soracak 
+                olursanız, eğer daha fazla desteklenmezse bu şekilde ilerler. Araştırmalar yapılıyor, uluslararası projelere 
+                katılıyor insanlar. Geçmişe göre daha iyi durumdayız. Gelecekte de şimdiki durumdan daha iyi 
+                araştırılmalar yapılacağına inanıyorum ama büyük bir patlama beklemek yanlış olur. 
+                <br>
+                <br>
+                - Öğrenci: ‘’Fizik hayatımızın hangi köşesinde yer alıyor?’’
+                <br>
+                <br>
+                - Tansel AK: ‘’Fizik benim hayatımın her köşesinde var ama onu çok itiraf 
+                etmem genellikle. Çünkü astronomi daha eşsiz ve bağımsız bir alan olarak bir 
+                kenarda her zaman durur. Onu biz fazla karıştırmak istemeyiz. Astronomi 
+                fiziğin bir alanıdır diyenler vardır ama biz hep onu ayrı tutmak isteriz. 
+                Fizik bizim hayatımızda, her nefes alışımızda var. Yaptığımız araştırmalarda 
+                gözlemlerimizi açıklamak için onu kullanıyoruz. Dolayısıyla fizik lazım. Hep 
+                var.
+                <br>
+                <br>
+                -Öğrenci: ‘’Geçmişte, Türkiye’de gelişime daha yeni çocuk olarak bakıldığı dönemlerde birçok matematikçi
+                yetiştirdik ancak yeni dönemde bilim üzerine yatırım yapamıyoruz. Acaba biz yeni eğitim müfredatımızda 
+                gençlerimize matematiği sevdiremiyor, matematiğe olan bakış açısını iyi yönde geliştiremiyor muyuz?’’ 
+                <br>
+                <br>
+                -Tansel AK: ‘’Matematiği eğer sevemiyorsa öğrenciler, sadece öğretmenlerinizin kabahati değil tabi. 
+                Toplumu yöneten insanların matematiğe nasıl baktığı ile ilgili bir gerçek de var. Matematiğe ‘ay çok zor, 
+                nasıl öğreneceğiz, nerede lazım olur?’ diye baktıkları için oluyor ki toplumun gerçek yönlendiricileri 
+                siyasetçilerdir. ‘Eğer krallar filozof ya da filozoflar kral değilse bir ülkede, o ülke geri gitmeye muhtaçtır.’’ 
+                <br>
+                <br>
+                - Öğrenci: ‘’Peki matematiği diğer bilim dalları ile ilişkilendirerek, bunu 
+                bir ders gibi düşünmekten daha çok bir yaşam felsefesi haline getirilmesini 
+                nasıl sağlayabiliriz?’’
+                <br>
+                <br>
+                -Tansel AK: ‘’Matematiğin diğer bilim adamlarındaki veya diğer derslerdeki yerini doğru şekilde anlatarak 
+                sağlayabiliriz. Bir fizik yasasını anlamak istiyorsanız matematiği kullanırsınız. Eğer matematiğin orada 
+                nasıl kullanıldığını öğrencilere anlatırsanız, öğrenci matematiğin hayatımızdaki yerini daha iyi görür.’’ 
+                <br>
+                <br>
+                -Öğrenci: ‘’Sizce eğitim müfredatımızda fizik yeteri kadar destek verilen bir alan mıdır?’’ 
+                <br>
+                <br>
+                -Tansel AK: ‘’Bize gelen öğrencilerin durumlarına baktığım zaman liselerde doğru ve yeterli fizik eğitimi 
+                verilmediğini söyleyebilirim. 
+                <br>
+                <br>
+                -Öğrenci: ‘’Uzaya uydular fırlatıyoruz vesaire ancak neden bir Çin, bir Rusya, bir Amerika veya diğer 
+                Avrupa ülkeleri gibi uzay alanına yatırım yapılmıyor?’’ 
+                <br>
+                <br>
+                - Tansel AK: ‘’Uzay alanına yatırım yapılıyor aslında. Bu alan tek bir 
+                ülkenin kendi başına altından kalkabileceği bir şey değil. O haberleşme 
+                uyduları vesaire için bile uluslararası ortaklıklar gerekiyor. Çünkü dünyada 
+                birkaç ülke haricinde uzay araçlarının bütün komponentlerini tek başına 
+                yapabilen ülke sayısı çok az. Evet, Çin var, Rusya var, Amerika var ama ABD’de 
+                özellikle NASA’nın yaptığı projelere bir bakın. Muhakkak bir Avrupa ülkesinin 
+                ya da Kanada’nın bir eli, bir katkısı vardır. Çok pahalı projeler ve çok 
+                farklı disiplinlerden bilgi birikimi ve deneyim gerektiren projeler bunlar. 
+                Mekanik, aerodinamik, elektroniğ bileceksiniz, yazılımı, fiziği, matematiği 
+                çok iyi bileceksiniz; kısacası her alana hakim olmak gerekiyor. Uzay alanı 
+                böyledir. Dünyanın en fazla bilimsel disiplin veya araştırma disiplini içeren 
+                alanı, uzay bilimleri ve astronomidir.’’ 
+                <br>
+                <br>
+                Öğrenci: ‘’Matematiğin başlangıcı nedir?’’ 
+                <br>
+                <br>
+                -Tansel AK: ‘’İnsanın varoluşundan itibaren var matematik. Yani Havva meyveleri saymıştır, ağaçta kaç 
+                tane var diye.’’ 
+                <br>
+                <br>
+                -Öğrenci: ‘’Tercih döneminde astronomi veyahut uzayla ilgili olan bölümleri tercih edeceği söylendiği 
+                zaman insanımızın bakış açısı neden bu kadar ön yargılı?’’ 
+                <br>
+                <br>
+                -Tansel AK: ‘’Hak vermiyor değilim. Hangi mesleği seçerseniz seçin mutlaka başarılı olursunuz ama 
+                astronomi ile devam etmek istiyorsanız şansınız çok az. Çok az kişi yükselebilir çünkü çalışabilecekleri 
+                astronomi alanı sayılıdır.’’
+                <br>
+                <br>
+                - Öğrenci: ‘’Şahit olduğunuz ve sizi en çok etkileyen gök olayı nedir?’’ 
+                <br>
+                <br>
+                -Tansel Ak; ‘’Tam güneş tutulması. İki sefer gözlemledim. İlkine 1999 yılında Turhal’da şahit oldum. 
+                Özellikle gözlem yapma amacıyla gitmiştik. Diğeri ise 2006 yılında Manavgat’ta, yine gözlem amacıyla 
+                gözlem ekipleri halinde gitmiştik. Birçok resim çekmiştik ki ben de resim çekenlerden biriydim. Beni en çok
+                etkileyen o iki olaydı. Acayip bir duygu. Gündüz vakti etraf kararıyor, rüzgâr çıkıyor, hayvanların sesleri 
+                kesiliyor, ortamın sıcaklığı düşüyor ve bunu sadece birkaç dakika içinde yaşıyorsunuz. Güneşin önüne ay 
+                geliyor ve hatta neye baktığınızı biliyorsanız ayın etrafında güneşten çıkan patlamaları görme imkânınız 
+                var. Müthiş etkileyici bir olaydır, bu nedenle savaş bile durmuştur. Bu olayı yaşamanızı ve gözlemlemenizi
+                isterim.’’ 
+                <br>
+                <br>
+                -Öğrenci: ‘’Araştırma alanlarınızda birçok konuya yer vermişsiniz, fizik konusunun dışında benim en çok 
+                dikkatimi çeken astronomi konusu oldu. Neden astronomi?’’
+                <br>
+                <br>
+                -Tansel AK: ‘’Astronominin ismi hoşuma gittiği için seçtim. Ben kataklizmik çift yıldızlar ve galaktik yapı 
+                üzerine çalışıyorum. Onun dışında birkaç alanda da çalıştım. Biz bu konularda sürekli fiziği kullanıyoruz. 
+                Neden astronomiyi seçtim? Dediğim gibi başta ismi hoşuma gitti sonrasında araştırmalar yaptıkça bu 
+                konuyu daha da çok sevdim. Astronomi okuyan insan evren bilincine sahip olur; evreni tanır, evrenin 
+                yapısını gözleyebilir. Evrenin en uzak köşesine kadar bulunan cisimlerin özelliklerini, kimyasal 
+                kompozisyonlarını, sıcaklıklarını, kütlelerini, yaşlarını, evrimlerini ve sadece gri hücreleri kullanarak 
+                öğrenebiliyoruz. Ne kadar muhteşem bir varlık değil mi? Evet çok güzel araştırmalar yapıyorum; oturup 
+                milyonlarca yıldızı inceliyoruz, hesaplar yapıyoruz, grafikler çiziyoruz ve oradan bir sürü bilgi ediniyoruz. 
+                Bunlar çok keyifli şeyler. Astronomiyi bu kadar güzel olduğu için seviyorum.’’ 
+                <br>
+                <br>
+                - Öğrenci: ‘’Hayatta her yol matematiğe çıkıyor, peki astronomi ile 
+                matematiği bağlayan unsurlar nelerdir?’’ 
+                <br>
+                <br>
+                -Tansel AK: ‘’Bütün temel bilim alanlarında kendimizi ifade edebilmemiz için matematik dilini bilmek 
+                zorundayız. Her alanda matematik vardır. Astronomi ile alakası ise şöyle ki her şeyden önce tarihsel 
+                süreçte çok gereklidir. Çünkü gökyüzündeki cisimleri gözlemledikten sonra hareketlerini modelleyebilmek 
+                için matematiğe ihtiyaç duyarız. Modellemenin amacı da elimizdeki görselleri açıklayabilmek yani 
+                geçmişte ne zaman ve nerede görüldüğünü söyleyebilmek ve buna bağlı olarak da geleceğe dair 
+                öngörüde bulunabilmektir. Bu konularla ilgilenen insanlara başta doğa felsefecisi değil, o zamanlar fizikçi, 
+                matematikçi gibi terimler yerine doğa felsefecisi deniliyordu. “Sen matematikle gök cisimlerinin hareketini 
+                açıklayan insansın başka işle uğraşma” deniyordu. Mesela Johannes Kepler fiziksel yorum yapmaya 
+                çalışmış ama yanlış bir kalıp kullanmış. Halbuki Kepler’in bulduğu yasalar Gezegenlerin Hareketleri 
+                Yasası bir tanesi açısal momentum konumu bir diğeri de evrensel çekim yasasıdır.’’ 
+                <br>
+                <br>
+                Öğrenci: ‘’Evren bilincine sahip olmak insanın kendisini bilmesini sağlar’ 
+                demiştiniz, o halde her insanın evren bilincine sahip olması mı gerekir?’’ 
+                <br>
+                <br>
+                -Tansel Ak: ‘’İnsanların asgari düzeyde astronomi bilgisine sahip olması gerekir. Bu gerçekten insanın 
+                kendisini ve diğer insanları tanıması için gereklidir. Astronom olacak kadar değil tabii. O başka bir sevgi. 
+                Ancak insan hangi dünyada yaşıyor, dünyanın çevresinde neler var, yaşadığı güneş sisteminde neler var, 
+                evrende neler var, bunu bilmek zorunda. Baksanıza, dünya kadar astrologların peşinden koşan insan var. 
+                Diyoruz ki, ‘ilim nerede olursa olsun bulun’, ‘bana bir harf öğretenin kırk yıl kölesi olurum’, bunlar bu 
+                toplumun dilinden gelen sözler. ‘Hayatta en hakiki mürşit ilimdir.’ bu da Atatürk'ün sözü. Genel olarak biz 
+                bunlara inanıyoruz. Çok seviyoruz böyle süslü lafları ama gereğini yapıyor muyuz, niye astrologların 
+                peşinden koşuyoruz, neden kırıkçıya gidiyor da insan hastaneye gitmiyor? İnsanlar doğru şekilde bilgi 
+                edinirse -ki siyasetçiler hiç sevmez böyle insanları- bu şekilde doğru ve gelişen bir toplum elde edersiniz. 
+                İngiliz politikacının bir sözü vardır; Michael Moore diye bir Amerikalı, film yönetmeni, İngiliz politikacıyla 
+                konuşuyor. Adam diyor ki ‘’ İnsanları iyi yönetmek istiyorsanız iki şey yaparsınız, onları cahil bırakırsınız 
+                ve korku verirsiniz.’’ Bu bazen ekonomik problemler olur, bazen de sağlık problemleri olur. Sağlık sigortası
+                üzerine bir film hazırlamış adam. Diyor ki ‘’ Eğer insanlara sağlıklarını kaybettikleri zaman, devlet doğru 
+                şekilde tedavi edilme fırsatı sağlamıyorsa, o iyi bir devlet değildir ve eğer insanlarda hastalanırsam devlet 
+                bana bakmayacak korkusu olursa onları kolay yönetirsiniz.’’ diyor ama cahil insanlardan oluşan bir 
+                toplulukta bunu yaparsınız, akıllı insanlar bunu yapan politikacıları seçmezler. Kendinizi geliştirin. Bir hobi 
+                edinin, resim yapın ama resim yaparken; resmin tarihini, sanat akımlarını öğrenin, tarih okuyun, 
+                edebiyatla ilgilenin, şiir yazın, şiir okuyun, herhangi bir şeyle ilgilenin. Bu sizin kendinizi geliştirmenizi 
+                sağlar. Sadece yaptığı işle gelişemez insan.’’
+                <br>
+                <br>
+                -Öğrenci: ‘’Araştırdığınız araştırma alanlarından hangi konu sizi en çok zorladı?’’ 
+                <br>
+                <br>
+                - Tansel AK: ‘’Beni en çok zorlayan kataklizmik çift yıldızlar. Tanımı ise 
+                basitçe bir çift yıldız birinden ötekine madde aktarır, etrafında disk 
+                oluşturur. Beni en çok ne zorladı biliyor musun? Fiziği iyi bilmemek zorladı. 
+                Çünkü astronomi eğitimi alırken fizik bilgim her zaman eksikti; şimdi tam 
+                anlamıyla anlıyorum, en büyük üzüntüm okuduğum astronomi müfredatında fiziğin 
+                az olmasıydı. O yüzden anlamakta güçlük çekiyordum. Çünkü bazı teorileri 
+                anlamakta, teorik hesapları anlamakta zorlanıyodum. Eğer teoriyi bilmezsen 
+                gözlemi anlamlandıramazsın yani gözlemi açıklamak için de teoriyi iyi 
+                bilmelisin. En çok bu konuda zorlandım.’’
+                <br>
+                <br> 
+                Öğrenci: ‘’Matematiğin bilim insanlarına katkısı nedir? Matematik neden bu 
+                kadar önemlidir?’’ 
+                <br>
+                <br>
+                -Tansel AK: ‘’Matematik bütün bilim insanlarının düşüncelerini ifade edebilmeleri için ihtiyaç duydukları ve 
+                kullandıkları dildir. O yüzden matematik hayatın her alanında çok önemlidir.’’ 
+                <br>
+                <br>
+                Bize vakit ayırdığınız ve gösterdiğiniz ilgi için teşekkürler…</p>
+                <br>
+        </section>
+        <section id="gallery">
+            <h2>Galeri</h2>
+            <div class="gallery">
+                <!-- 8 Fotoğraf İçin Yer Ayrıldı -->
+                <img src="röportaj/Fizik ve Matematik Üzerine Bir Röportaj/fizik-ve-matematik-uzerine-bir-roportaj fotoğraf1.jpg" alt="Fotoğraf 1">
+                <img src="röportaj/Fizik ve Matematik Üzerine Bir Röportaj/fizik-ve-matematik-uzerine-bir-roportaj fotoğraf2.jpg" alt="Fotoğraf 2">
+                <img src="röportaj/Fizik ve Matematik Üzerine Bir Röportaj/fizik-ve-matematik-uzerine-bir-roportaj fotoğraf3.jpg" alt="Fotoğraf 3">
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact">
+        <p>&copy; 2025 Genç Bakışlar. Tüm Hakları Saklıdır.</p>
+        <p>Design by <a href="roportaj.html">Genç Bakışlar</a></p>
+    </footer>
+</body>
+</html>
