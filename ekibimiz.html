@@ -470,34 +470,33 @@ function searchFunction() {
 </div>
 <!--EKİBİMİZ KISMI CSS-->
 <style>
-.carousel-control-prev, 
+/* Ok işaretlerini gizle */
+.carousel-control-prev,
 .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background-color: #28a745; /* Yeşil renk */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
+}
+
+/* Kullanıcı tıklama alanlarını ekle */
+.carousel-inner {
     cursor: pointer;
 }
-.carousel-control-prev i,
-.carousel-control-next i {
-    color: #fff; /* Beyaz renk */
-    font-size: 24px;
+
+.carousel-inner .carousel-item {
+    transition: transform 0.3s ease; /*BEKLEME SÜRESİ 3 SANİYE*/
 }
-.carousel-control-prev {
-    left: -60px; /* Sol pozisyon */
+
+.carousel-item:hover {
+    opacity: 0.8; /* Hover efekti, tıklanabilir olduğunu belirten görsel değişiklik */
 }
-.carousel-control-next {
-    right: -60px; /* Sağ pozisyon */
+
+/* Aktif öğe için özel stil */
+.carousel-item.active {
+    opacity: 1;
 }
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background-color: #218838; /* Daha koyu yeşil */
+
+/* Yeni stil */
+.carousel-item img {
+    pointer-events: none; /* Resimlerin üzerine tıklanmasını engelle */
 }
 
 .trannir_text img {
@@ -527,7 +526,62 @@ function searchFunction() {
    font-size: 18px;
 }
 </style>
+<!--EKİBİMİZ JAVASCRİPT KODLARI-->
+<script>
+   document.querySelector('.carousel-inner').addEventListener('click', function (event) {
+      var carousel = $('#teamCarousel');
+      var offsetX = event.offsetX;
+      var totalWidth = event.target.clientWidth;
 
+      if (offsetX < totalWidth / 2) {
+         carousel.carousel('prev');
+      } else {
+         carousel.carousel('next');
+      }
+   });
+</script>
+
+<!--TELEFONDA DÜZGÜN OLMASI İÇİN CSS KODU-->
+<style>
+   @media only screen and (max-width: 768px) {
+    .red-area {
+        display: flex;
+        flex-direction: column; /* Fotoğrafları dikey hizala */
+        align-items: center;
+        gap: 20px; /* Fotoğraflar arası boşluk */
+    }
+
+    .red-area img {
+        width: 100%; /* Fotoğrafların genişliği ekranı kaplasın */
+        height: auto; /* Yükseklik orantılı olsun */
+        max-width: 300px; /* Maksimum genişlik sınırı */
+    }
+
+    .blue-area {
+        grid-template-columns: repeat(2, 1fr); /* 2 sütun düzeni */
+        gap: 10px; /* Daha dar boşluk */
+    }
+
+    .blue-item img {
+        width: 40px; /* Mobilde daha küçük profil resimleri */
+        height: 40px;
+    }
+
+    .blue-item div {
+        font-size: 0.85em; /* Yazı boyutunu küçült */
+    }
+
+    .trannir_text img {
+        width: 150px; /* Mobilde daha küçük yuvarlak resimler */
+        height: 150px;
+    }
+
+    .trannir_text {
+        margin-bottom: 10px; /* Alt boşluğu azalt */
+    }
+}
+
+</style>
 
 
       <!-- footer -->
