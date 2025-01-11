@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p>9-H sınıfında "Genç Şairlerden Mısralar" temalı konuşma sınavımızı gruplar oluşturarak sınıf içi etkinliği şeklinde gerçekleştirdik.</p>
             <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf1.jpg" alt="Genç Şairlerden Mısralar">
         </section>
-
+    
         <section id="gallery">
             <h2>Galeri</h2>
             <div class="gallery">
@@ -269,18 +269,40 @@ document.addEventListener("DOMContentLoaded", function () {
                 <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf4.jpg" alt="Fotoğraf 4">
                 <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf5.jpg" alt="Fotoğraf 5">
                 <img src="sınıf içi etkinlikler/Genç Şairlerden Mısralar/Genç Şairlerden Mısralar Fotoğraf6.jpg" alt="Fotoğraf 6">
-        
-                <!-- Video -->
-                <video controls>
+<br>
+                <video controls class="styled-video">
                     <source src="videolar/Genç Şairlerden Mısralar Sınıf İçi Etkinlik.mp4" type="video/mp4">
-                    Tarayıcınız bu videoyu desteklemiyor.
+                    Tarayıcın Videoyu Desteklemiyor
                 </video>
             </div>
         </section>
-        
-        
     </main>
-
+    
+    <!-- VİDEO CSS -->
+    <style>
+        #gallery {
+            text-align: center;
+            margin: 20px 0;
+        }
+    
+        .styled-video {
+            width: 80%; /* Videonun genişliği, ekranın %80'i kadar olacak */
+            max-width: 800px; /* Maksimum genişlik sınırı */
+            border-radius: 15px; /* Köşeleri yuvarlat */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Hafif bir gölge ekle */
+            border: 2px solid #ccc; /* Çerçeve */
+            display: block; /* Ortalamayı kolaylaştırmak için */
+            margin: 0 auto; /* Video'yu ortala */
+        }
+    
+        /* Daha küçük ekranlar için responsive düzen */
+        @media (max-width: 600px) {
+            .styled-video {
+                width: 95%; /* Küçük ekranlarda daha fazla yer kaplaması için */
+            }
+        }
+    </style>
+    
 
     <footer id="contact">
         <p>&copy; 2025 Genç Bakışlar. Tüm Hakları Saklıdır.</p>
