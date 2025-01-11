@@ -163,30 +163,35 @@ document.addEventListener("DOMContentLoaded", function () {
             transform: scale(1.03);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
-        /* Galeri */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-            margin-top: 30px;
-        }
+/* Galeri Düzeni */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 sütun */
+    gap: 20px;
+    margin-top: 40px;
+}
 
-        .gallery img {
-            width: 32%; /* Üçlü yerleşim için her bir fotoğrafın genişliği */
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+/* Görsellerin ve videoların boyutlarını eşitle */
+.gallery img,
+.gallery video {
+    width: 100%; /* Tam genişlik */
+    height: 500px; /* Aynı yükseklik */
+    object-fit: cover; /* Boyutlandırma */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
+/* Hover efekti */
+.gallery img:hover,
+.gallery video:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
 
         /* Footer */
         footer {
-            background-color: black;
+            background-color: #2881c6c7;
             color: white;
             text-align: center;
             padding: 20px;
@@ -205,23 +210,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         footer a:hover {
-            color: black;
+            color: #2f9ff5c7;
         }
 
-        /* Video stil */
-        .gallery video {
-            width: 32%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery video:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-        /* Responsive Tasarım */
+        /* Responsive */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.5em;
@@ -230,10 +222,6 @@ document.addEventListener("DOMContentLoaded", function () {
             nav ul {
                 flex-direction: column;
                 gap: 10px;
-            }
-
-            .gallery img {
-                width: 100%;
             }
         }
     </style>
@@ -290,33 +278,48 @@ document.addEventListener("DOMContentLoaded", function () {
         <section id="gallery" class="fade-in">
             <h2>Galeri</h2>
             <div class="gallery">
-                <video width="900" height="500" controls autoplay>
-                    <source src="videolar/dokuzu beş geçe 10 kasım.mp4" type="video/mp4">
-                    Tarayıcınız video etiketini desteklemiyor.
-                </video>
-                <video width="900" height="500" controls autoplay>
-                    <source src="videolar/saygı duruşu 10 kasım.mp4" type="video/mp4">
-                    Tarayıcınız video etiketini desteklemiyor.
-                </video>
-                <video width="900" height="500" controls autoplay>
-                    <source src="videolar/hüseyin kahraman 10 kasım konuşma videosu.mp4" type="video/mp4">
-                    Tarayıcınız video etiketini desteklemiyor.
-                </video>
-                <video width="900" height="500" controls autoplay>
-                    <source src="videolar/10 Kasım 1.mp4" type="video/mp4">
-                    Tarayıcınız video etiketini desteklemiyor.
-                </video>
-                <img src="özel günler/10 Kasım/10 Kasım Kapak Fotoğrafı.jpg" alt="Atatürk 3">
-                <video width="900" height="500" controls autoplay>
-                    <source src="videolar/10 Kasım 2.mp4" type="video/mp4">
-                    Tarayıcınız video etiketini desteklemiyor.
-                </video>
-
-                <img src="özel günler/10 Kasım/Hüseyin Kahraman 10 kasım konuşma fotoğrafı.jpg" alt="Atatürk 3">
-                <img src="özel günler/10 Kasım/10 Kasım Topluca Saygı Duruşu.jpg" alt="10 Kasım Atatürk'ü Anma Günü">
-                <img src="özel günler/10 Kasım/10 Kasımla ilgili konuşma uzaktan fotoğraf.jpg" alt="10 Kasım Atatürk'ü Anma Günü">
+                <div>
+                    <img src="özel günler/10 Kasım/Hüseyin Kahraman 10 kasım konuşma fotoğrafı.jpg" alt="Atatürk 3">
+                </div>
+                <div>
+                    <img src="özel günler/10 Kasım/10 Kasım Topluca Saygı Duruşu.jpg" alt="10 Kasım Atatürk'ü Anma Günü">
+                </div>
+                <div>
+                    <img src="özel günler/10 Kasım/10 Kasımla ilgili konuşma uzaktan fotoğraf.jpg" alt="10 Kasım Atatürk'ü Anma Günü">
+                </div>
+                <div>
+                    <video controls autoplay>
+                        <source src="videolar/dokuzu beş geçe 10 kasım.mp4" type="video/mp4">
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
+                </div>
+                <div>
+                    <video controls autoplay>
+                        <source src="videolar/saygı duruşu 10 kasım.mp4" type="video/mp4">
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
+                </div>
+                <div>
+                    <video controls autoplay>
+                        <source src="videolar/hüseyin kahraman 10 kasım konuşma videosu.mp4" type="video/mp4">
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
+                </div>
+                <div>
+                    <video controls autoplay>
+                        <source src="videolar/10 Kasım 1.mp4" type="video/mp4">
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
+                </div>
+                <div>
+                    <video controls autoplay>
+                        <source src="videolar/10 Kasım 2.mp4" type="video/mp4">
+                        Tarayıcınız video etiketini desteklemiyor.
+                    </video>
+                </div>
             </div>
         </section>
+        
     </main>
 
     <footer id="contact">
