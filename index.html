@@ -421,10 +421,10 @@
          <div class="col-md-5">
             <img src="images/pendik anadolu lisesi.jpg" alt="Pendik Lisesi" class="img-fluid">
          </div>
+         <br>
          <div class="col-md-7">
             <div class="titlepage text_align_center">
                <h2>Hakkımızda</h2>
-               <br>
                <br>
                <p style="text-align: justify;">
                   Pendik’in en eski ve en köklü okullarından biri olan Pendik Anadolu Lisesi, köklü geçmişiyle
@@ -621,34 +621,33 @@
 </div>
 <!--EKİBİMİZ KISMI CSS-->
 <style>
-.carousel-control-prev, 
+/* Ok işaretlerini gizle */
+.carousel-control-prev,
 .carousel-control-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background-color: #28a745; /* Yeşil renk */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
+}
+
+/* Kullanıcı tıklama alanlarını ekle */
+.carousel-inner {
     cursor: pointer;
 }
-.carousel-control-prev i,
-.carousel-control-next i {
-    color: #fff; /* Beyaz renk */
-    font-size: 24px;
+
+.carousel-inner .carousel-item {
+    transition: transform 0.3s ease; /*BEKLEME SÜRESİ 3 SANİYE*/
 }
-.carousel-control-prev {
-    left: -60px; /* Sol pozisyon */
+
+.carousel-item:hover {
+    opacity: 0.8; /* Hover efekti, tıklanabilir olduğunu belirten görsel değişiklik */
 }
-.carousel-control-next {
-    right: -60px; /* Sağ pozisyon */
+
+/* Aktif öğe için özel stil */
+.carousel-item.active {
+    opacity: 1;
 }
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    background-color: rgb(11, 181, 11); /* Daha koyu yeşil */
+
+/* Yeni stil */
+.carousel-item img {
+    pointer-events: none; /* Resimlerin üzerine tıklanmasını engelle */
 }
 
 .trannir_text img {
@@ -678,6 +677,19 @@
    font-size: 18px;
 }
 </style>
+<script>
+   document.querySelector('.carousel-inner').addEventListener('click', function (event) {
+      var carousel = $('#teamCarousel');
+      var offsetX = event.offsetX;
+      var totalWidth = event.target.clientWidth;
+
+      if (offsetX < totalWidth / 2) {
+         carousel.carousel('prev');
+      } else {
+         carousel.carousel('next');
+      }
+   });
+</script>
 
 
       <br>
@@ -854,6 +866,114 @@
             }
          }
       </style>
+      
+<!--TELEFON HALİ DÜZGÜN OLSUN DİYE CSS KODU-->
+<style>
+   @media (max-width: 768px) {
+       /* Genel Gövde ve Metin */
+       body {
+           padding: 0 10px;
+       }
+   
+       header {
+           padding: 10px;
+       }
+   
+       /* Logo */
+       .logo img {
+           max-width: 70px;
+       }
+   
+       /* Menü Elemanları */
+       .email li a {
+           font-size: 16px;
+       }
+   
+       /* Kategori Bölümü */
+       .categories {
+           padding: 30px 0;
+       }
+   
+       .category-title {
+           font-size: 24px;
+           margin-bottom: 20px;
+       }
+   
+       .category-item {
+           margin-bottom: 20px;
+       }
+   
+       .category-item img {
+           width: 100px;
+           height: 100px;
+       }
+   
+       /* Footer */
+       .footer {
+           padding: 30px 0;
+       }
+   
+       .footer a {
+           font-size: 14px;
+       }
+   
+       /* Sosyal İkonlar */
+       .social_icon li {
+           margin: 0 3px;
+       }
+   
+       /* Arama Çubuğu */
+       #search-bar form {
+           flex-direction: column;
+           align-items: flex-start;
+       }
+   
+       #search-bar input {
+           width: 100%;
+       }
+   
+       #search-bar button {
+           margin: 5px 0;
+           width: 100%;
+       }
+   
+       /* Carousel Kontrolleri */
+       .carousel-control-prev, 
+       .carousel-control-next {
+           width: 40px;
+           height: 40px;
+       }
+   
+       .carousel-control-prev i,
+       .carousel-control-next i {
+           font-size: 20px;
+       }
+   
+       /* İletişim Bölümü */
+       #contact-section {
+           padding: 60px 10px;
+       }
+   
+       #gif-section iframe {
+           width: 100%;
+           max-width: 100%;
+           height: auto;
+       }
+   
+       /* Ekibimiz */
+       .trannir_text img {
+           width: 150px;
+           height: 150px;
+       }
+   
+       .trannir_text {
+           margin-bottom: 15px;
+       }
+   }
+   </style>
+   
+
+
       <!-- end our_club -->
       <!--Sosyal Medya Kısımları -->
       <footer>
