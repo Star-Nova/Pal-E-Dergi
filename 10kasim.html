@@ -322,6 +322,64 @@ document.addEventListener("DOMContentLoaded", function () {
         
     </main>
 
+<!--TELEFON İÇİN FOTOĞRAF VE VİDEO DÜZGÜN HALİ İÇİN GEREKEN CSS KODU -->    
+    <style>
+        /* Telefonlar için responsive düzenleme */
+        @media (max-width: 768px) {
+            /* Galeri Düzeni */
+            .gallery {
+                grid-template-columns: repeat(1, 1fr); /* Tek sütun düzeni */
+                gap: 15px;
+            }
+        
+            /* Görsellerin ve videoların boyutları */
+            .gallery img,
+            .gallery video {
+                width: 100%; /* Tam genişlik */
+                height: auto; /* Oranını koruyarak yüksekliği ayarla */
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        
+            /* Header başlık düzeni */
+            header h1 {
+                font-size: 2em;
+            }
+        
+            header p {
+                font-size: 1em;
+            }
+        
+            /* Navigasyon linkleri */
+            nav ul {
+                flex-direction: column; /* Dikey hizalama */
+                gap: 10px;
+            }
+        
+            nav ul li a {
+                font-size: 1em;
+            }
+        
+            /* Ana içerik düzeni */
+            section {
+                padding: 20px 10px;
+            }
+        
+            section h2 {
+                font-size: 2em;
+            }
+        
+            section p {
+                font-size: 1em;
+            }
+        
+            /* Footer */
+            footer {
+                font-size: 0.9em;
+            }
+        }
+        </style>
+<!--ALT TARAF-->       
     <footer id="contact">
         <p>&copy; 2025 Genç Bakışlar. Tüm Hakları Saklıdır.</p>
         <p>Design by <a href="ozelgunler.html">Genç Bakışlar</a></p>
