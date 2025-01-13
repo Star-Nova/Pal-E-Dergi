@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang=tr>
+
+<head>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <style>
+      body {
+         font-family: 'Arial', sans-serif;
+         background-color: #f4f4f9;
+         margin: 0;
+         padding: 0;
+      }
+
+      header {
+         background-color: #fff;
+         padding: 20px;
+         position: relative;
+         z-index: 1000;
+      }
+
+      /* Logo ve Menü */
+      .logo img {
+         max-width: 90px;
+      }
+
+      .email li a {
+         color: #333;
+         font-size: 18px;
+      }
+
+      /* Kategori Stilleri */
+      .categories {
+         padding: 50px 0;
+         background-color: #f3f3f3;
+         text-align: center;
+      }
+
+      .category-title {
+         font-size: 36px;
+         margin-bottom: 40px;
+         color: #333;
+         text-transform: uppercase;
+         letter-spacing: 1.5px;
+      }
+
+      .category-item {
+         text-align: center;
+         margin-bottom: 30px;
+         transition: transform 0.3s ease-in-out;
+      }
+
+      .category-item img {
+         width: 120px;
+         height: 120px;
+ /* object-fit: cover; (boyutun sığdırılmasını sağlar)  kaldırıldı  */
+         border-radius: 10px;
+/* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); ( box shadow resmi çerçevenin içinde gösterir) kaldırıldı  */
+         transition: transform 0.3s ease;
+      }
+
+      .category-item:hover {
+         transform: translateY(-10px);
+      }
+
+      .category-item img:hover {
+         transform: scale(1.1);
+      }
+
+      /* Footer */
+      .footer {
+         background-color: #272727;
+         padding: 50px 0;
+         color: #fff;
+      }
+
+      .footer a {
+         color: #fff;
+         text-decoration: none;
+      }
+
+      .footer a:hover {
+         color: #5271ff;
+      }
+   </style>
+
+
+   <!-- BAŞLIYOR-->
+
+<body class="main-layout">
+   <header>
+      <!-- Header İçeriği -->
+   </header>
+
+   <a href="#" id="scrollTopBtn">
+      ↑
+   </a>
+   <style>
+      /* Scroll to Top Button */
+      #scrollTopBtn {
+         display: none;
+         /* Başlangıçta gizli */
+         position: fixed;
+         bottom: 20px;
+         right: 30px;
+         z-index: 99;
+         width: 60px;
+         height: 60px;
+         background-color: #26cc35; /*Butonun gözüken rengini ayarlıyor*/
+         /* Butonun arka plan rengi */
+         color: white;
+         /* Yazı rengi */
+         border-radius: 50%;
+         /* Yuvarlak yapar */
+         font-size: 30px;
+         /* Yazı boyutu */
+         text-align: center;
+         /* Yazıyı ortalar */
+         line-height: 60px;
+         /* Yükseklikle aynı, dikey olarak ortalar */
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+         /* Gölge efekti */
+         transition: background-color 0.3s, box-shadow 0.3s;
+         /* Geçiş animasyonu */
+      }
+
+      #scrollTopBtn:hover {
+         background-color: rgb(0, 150, 0);
+         /* Hover sırasında arka plan rengi */
+         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+         /* Hover sırasında gölge efekti */
+      }
+   </style>
+   <script>
+      // Sayfa kaydırıldığında butonun görünmesini sağlar
+      window.onscroll = function () {
+         var scrollTopBtn = document.getElementById("scrollTopBtn");
+         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollTopBtn.style.display = "block";
+         } else {
+            scrollTopBtn.style.display = "none";
+         }
+      };
+
+      // Butona tıklandığında sayfanın en üstüne kaydırır
+      document.getElementById("scrollTopBtn").addEventListener("click", function (event) {
+         event.preventDefault();
+         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+   </script>
+
+
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>Genç Bakışlar | Ana Sayfa</title>
+   <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+   <meta name="keywords" content="kültür,edebiyat,sanat,Pal,Pendik Anadolu Lisesi,Genç Bakışlar">
+   <meta name="description" content=" #Açıklama Yazılacak">
+   <meta name="author" content="">
+   <meta name="author" content="Genç Bakışlar" />
+   <link rel="shortcut icon" href="icon/arkatemasız.png" type="">
+   <!-- bootstrap css -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- awesome fontfamily -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="" /></div>
+      </div>
+      <!-- end loader -->
+      <div id="mySidepanel" class="sidepanel">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+         <a class="active" href="index.html">Ana Sayfa</a>
+         <a href="hakkimda.html">Hakkımızda</a>
+         <a href="ekibimiz.html">Ekibimiz</a>
+         <a href="iletisim.html">İletişim</a>
+         <a href="kategoriler.html">Kategoriler</a>
+         <a href="post.html">Gönderi Gönder</a>
+       </div>
+
+      <!-- header -->
+      <header>
+         <!-- YÖNLENDİRİCİ KÜÇÜK ÜSTEKİ BUTONLAR-->
+         <div class="head-top">
+            <div class="container-fluid">
+               <div class="row d_flex">
+                  <div class="col-sm-3">
+                     <div class="logo">
+                        <a href="index.html"><img src="icon/arkatemasız.png" width="90" height="90" /></a>
+                     </div>
+                  </div>
+                  <div class="col-sm-9">
+                     <ul class="email text_align_right">
+                        <!-- Kullanıcı Giriş ve Kayıt -->
+                        <li><a href="post.html"><i class="fa fa-paper-plane" aria-hidden="true"></i></a></li>
+                        <li><a href="duyuru.html"><img src="images/duyuru.png" alt="Duyuru" height="30" width="30"></a>
+                        </li>
+                        <!-- Arama Butonu-->
+                        <li>
+                           <a href="Javascript:void(0)" onclick="toggleSearch()">
+                              <i class="fa fa-search" aria-hidden="true"></i>
+                           </a>
+                        </li>
+                        <li><button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button></li>
+                     </ul>
+                     <!--Genişletilmiş Arama Çubuğu -->
+                     <div id="search-bar" style="display:none; margin-top:10px; position:relative; max-width: 100%;">
+                        <form onsubmit="return searchFunction()"
+                           style="display: flex; align-items: center; width: 100%;">
+                           <input type="text" id="search-query" placeholder="Arama yap..."
+                              style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 80%;">
+                           <button type="submit"
+                              style="padding: 10px; margin-left: 5px; border: none; background-color: #4CAF50; color: white; border-radius: 4px; cursor: pointer;">Ara</button>
+                           <!-- Kapatma (X) Butonu -->
+                           <button type="button" onclick="toggleSearch()"
+                              style="padding: 10px; margin-left: 5px; border: none; background-color: #f44336; color: white; border-radius: 4px; cursor: pointer;">&times;</button>
+                        </form>
+                     </div>
+                  </div>
+
+                  <script>
+                     // Arama Çubuğu CSS Değişir
+                     function toggleSearch() {
+                        var searchBar = document.getElementById("search-bar");
+                        var inputField = document.getElementById("search-query");
+                        if (searchBar.style.display === "none") {
+                           searchBar.style.display = "flex";
+                           inputField.focus();  // Focus on the input field when opened
+                        } else {
+                           searchBar.style.display = "none";
+                           inputField.value = "";  // Clear the input field when closed
+                        }
+                     }
+
+                     // Arama Çubuğuna ne yazabileceğimizi buraya yazarız
+                     function searchFunction() {
+                        var query = document.getElementById("search-query").value.trim();
+
+                        if (query === "ana sayfa" || query === "Ana sayfa" || query === "Ana Sayfa" || query === "Ana sayfa") {
+                           window.location.href = "index.html";
+                        } else if (query === "iletişim" || query === "iletisim" || query === "İletisim" || query === "İletişim") {
+                           window.location.href = "iletisim.html";
+                        } else if (query === "hakkımızda" || query === "hakkimizda" || query === "Hakkimizda" || query === "Hakkımızda") {
+                           window.location.href = "hakkimda.html";
+                        } else if (query === "ekibimiz" || query === "Ekibimiz") {
+                           window.location.href = "ekibimiz.html";
+                        } else {
+                           alert("Aradığınız sayfa bulunamadı!");
+                        }
+
+                        return false;  // Prevent form submission
+                     }
+
+                  </script>
+
+
+      </header>
+      <!-- end header -->
+      <!--ÜST KAPAK FOTOĞRAFI-->
+      <div class="banner_main">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="club">
+                     <figure>
+                        <img class="sm_n0" src="icon/arkatemasız.png" alt="Background Icon">
+                     </figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+<br>
+<br>
+<!-- KATEGORİLER -->
+<div class="titlepage text_align_center">
+   <h2>Kategoriler</h2>
+   <br>
+   <br>
+      <div class="container">
+         <div class="row">
+            <!-- İlk kategori -->
+            <div class="col-md-4 mb-4">
+               <div class="category-item text-center">
+                  <figure>
+                     <img src="emojiler/bilimm.png" alt="Gezilerimiz" class="img-fluid">
+                  </figure>
+                  <a class="read_more btn btn-primary mt-3" href="bilim.html">Bilim</a>
+               </div>
+            </div>
+            <!-- İkinci kategori -->
+            <div class="col-md-4 mb-4">
+               <div class="category-item text-center">
+                  <figure>
+                     <img src="emojiler/kulturveedebiyat.png" alt="Kültür ve Edebiyat" class="img-fluid">
+                  </figure>
+                  <a class="read_more btn btn-primary mt-3" href="kulturveedebiyat.html">Kültür ve Edebiyat</a>
+               </div>
+            </div>
+            <!-- Üçüncü kategori -->
+            <div class="col-md-4 mb-4">
+               <div class="category-item text-center">
+                  <figure>
+                     <img src="emojiler/etkinlikler.png" alt="Etkinliklerimiz" class="img-fluid">
+                  </figure>
+                  <a class="read_more btn btn-primary mt-3" href="etkinlikleriniz.html">Etkinliklerimiz</a>
+               </div>
+            </div>
+            <!-- Tekrar eden öğeler için aynı yapı -->
+            <div class="col-md-4 mb-4">
+               <div class="category-item text-center">
+                  <figure>
+                     <img src="emojiler/tubitak.png" alt="Tübitak" class="img-fluid">
+                  </figure>
+                  <a class="read_more btn btn-primary mt-3" href="tubitak.html">Tübitak</a>
+               </div>
+            </div>
+            <div class="col-md-4 mb-4">
+               <div class="category-item text-center">
+                  <figure>
+                     <img src="emojiler/ozelgunler.png" alt="Özel Günler" class="img-fluid">
+                  </figure>
+                  <a class="read_more btn btn-primary mt-3" href="ozelgunler.html">Özel Günler</a>
+               </div>
+            </div>
+            <div class="col-md-4 mb-4">
+               <div class="category-item text-center">
+                  <figure>
+                     <img src="emojiler/astronomiveuzayy.png" alt="Astronomi ve Uzay" class="img-fluid">
+                  </figure>
+                  <a class="read_more btn btn-primary mt-3" href="astronomiveuzay.html">Astronomi ve Uzay</a>
+               </div>
+            </div>
+
+            <!-- Tekrar eden öğeler için aynı yapı -->
+            <div class="col-md-4 mb-4">
+               <div class="category-item text-center">
+                  <figure>
+                     <img src="emojiler/gezilerimiz.png" alt="Gezilerimiz" class="img-fluid">
+                  </figure>
+                  <a class="read_more btn btn-primary mt-3" href="gezilerimiz.html">Gezilerimiz</a>
+               </div>
+            </div>
+            <div class="col-md-4 mb-4">
+               <div class="category-item text-center">
+                  <figure>
+                     <img src="emojiler/röpotaj.png" alt="Röportaj" class="img-fluid">
+                  </figure>
+                  <a class="read_more btn btn-primary mt-3" href="roportaj.html">Röportaj</a>
+               </div>
+            </div>
+            <div class="col-md-4 mb-4">
+               <div class="category-item text-center">
+                  <figure>
+                     <img src="emojiler/derecelerimizz.png" alt="Derecelerimiz" class="img-fluid">
+                  </figure>
+                  <a class="read_more btn btn-primary mt-3" href="derecelerimiz.html">Derecelerimiz</a>
+               </div>
+            </div>
+
+         </div>
+      </div>
+</div>      
+
+
+      <style>
+         /* Carousel Oklarının Tasarımı */
+         #prevCarousel,
+         #nextCarousel {
+            width: 50px;
+            /* Okların genişliği */
+            height: 50px;
+            /* Okların yüksekliği */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Şeffaf siyah arka plan */
+            border-radius: 50%;
+            /* Yuvarlak butonlar */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            /* Beyaz oklar */
+            font-size: 2em;
+            /* Ok boyutunu büyütme */
+            transition: background-color 0.3s, transform 0.3s;
+            /* Geçiş efektleri */
+         }
+
+         #prevCarousel:hover,
+         #nextCarousel:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Hover durumunda oklar daha belirgin olacak */
+            transform: scale(1.1);
+            /* Hover durumunda oklar büyür */
+         }
+
+         #prevCarousel i,
+         #nextCarousel i {
+            pointer-events: none;
+            /* Ok simgelerinin tıklanamaz olmasını sağlar */
+         }
+      </style>
+<!-- hakkımızda -->
+<div class="hakkimizda">
+   <div class="container">
+      <div class="row align-items-center">
+         <div class="col-md-5">
+            <img src="images/pendik anadolu lisesi.jpg" alt="Pendik Lisesi" class="img-fluid">
+         </div>
+         <br>
+         <div class="col-md-7">
+            <div class="titlepage text_align_center">
+               <h2>Hakkımızda</h2>
+               <br>
+               <p style="text-align: justify;">
+                  Pendik’in en eski ve en köklü okullarından biri olan Pendik Anadolu Lisesi, köklü geçmişiyle
+                  bölgenin eğitim tarihinde önemli bir yere sahiptir. 1938-1939 eğitim-öğretim yılında Kadıköy
+                  Ortaokulu’nun bir şubesi olarak Azaryan Köşkü’nde eğitim hayatına başlayan okulumuz, kısa sürede
+                  bağımsız bir kimlik kazanmış ve Pendik Ortaokulu adıyla hizmet vermeye devam etmiştir. Zaman
+                  içerisinde pek çok önemli gelişmeye ve değişime tanıklık eden okulumuz, 1959 yılında Pendik
+                  Çamlık mevkiindeki bugünkü binasına taşınmış ve aynı yıl lise olarak faaliyetlerine başlamıştır.
+               </p>
+               <br>
+               <div class="text-center">
+                  <a class="read_more" href="hakkimda.html">Daha Fazla Oku</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+
+<!-- Ekibimiz -->
+<div class="trannir">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="titlepage text_align_center">
+               <h2>Ekibimiz</h2>
+            </div>
+         </div>
+      </div>
+      <div class="row d_flex">
+         <div class="col-lg-10 offset-lg-1 col-md-12">
+            <div id="teamCarousel" class="carousel slide" data-ride="carousel">
+               <ol class="carousel-indicators">
+                  <li data-target="#teamCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#teamCarousel" data-slide-to="1"></li>
+                  <li data-target="#teamCarousel" data-slide-to="2"></li>
+                  <li data-target="#teamCarousel" data-slide-to="3"></li>
+               </ol>
+               <div class="carousel-inner">
+                  <!-- Grup 1 -->
+                  <div class="carousel-item active">
+                     <div class="row">
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/Suat Hoca Profil Fotoğrafı.jpg" alt="Suat Yazar" />
+                              <h3>Suat Yazar</h3>
+                              <span>Danışman Öğretmen</span>
+                              <ul class="social_icon">
+                                 <li><a href="https://www.instagram.com/suat_yazar5818/"><i class="fa fa-instagram"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/volkan profil fotoğrafı.png" alt="Volkan Efe Yılmaz" />
+                              <h3>Volkan Efe Yılmaz</h3>
+                              <span>Etkinlik Koordinatörü</span>
+                              <ul class="social_icon">
+                                 <li><a href="https://www.instagram.com/m0ridezappa/"><i class="fa fa-instagram"></i></a></li>
+                                 <li> <a href="https://www.linkedin.com/in/volkan-efe-y%C4%B1lmaz-668a48329/"><i
+                                    class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/ege logo.jpg" alt="Ayşe Cebeci" />
+                              <h3>Ege Tanrıverdi</h3>
+                              <span>Web Programcı</span>
+                              <ul class="social_icon">
+                                 <li><a href="https://www.instagram.com/milattech/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                 <li><a href="https://linkedin.com/in/ege-tanriverdi-tr"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                 <li><a href="https://x.com/Kod_Yazari"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Grup 2 -->
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/ayşe profil.png" alt="Ayşe Cebeci" />
+                              <h3>Ayşe Cebeci</h3>
+                              <span>Grafik Tasarımcı</span>
+                              <ul class="social_icon">
+                                 <li><a href="https://www.instagram.com/aysee_cbc/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                 <li><a href="https://www.linkedin.com/in/ay%C5%9Fe-cebeci-7096b6339/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                 <li><a href="https://x.com/moon07411252743?s=11"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/zeynep profil fotoğrafı.png" alt="Zeynep Enez" />
+                              <h3>Zeynep Enez</h3>
+                              <span>Grafik Tasarımcı</span>
+                              <ul class="social_icon">
+                                 <li><a href="https://www.instagram.com/zeyneppnz_/"><i class="fa fa-instagram"></i></a></li>
+                                 <li><a href="https://www.linkedin.com/in/zeynep-enez-0b77a9288/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                 <li><a href="https://x.com/zeyneppnz_13?t=7J3IQgrPojqvNrTcBW40Lg&s=08"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/elif erkek.jfif" alt="Elif Erkek" />
+                              <h3>Elif Erkek</h3>
+                              <span>Grafik Tasarımcı</span>
+                              <ul class="social_icon">
+                                 <li><a href="https://www.instagram.com/elifferkekk/"><i class="fa fa-instagram"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Grup 3 -->
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/ege boyraz profil fotoğrafı.jfif" alt="Ege Boyraz" />
+                              <h3>Ege Boyraz</h3>
+                              <span>Grafik Tasarımcı</span>
+                              <ul class="social_icon">
+                                 <li><a href="https://www.instagram.com/ege_boyrazz/"><i class="fa fa-instagram"></i></a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/ikbal profil fotoğrafı.jfif" alt="Merve Kurt" />
+                              <h3>İkbal Şevval Mert</h3>
+                              <span>Grafik Tasarımcı</span>
+                              <ul class="social_icon">
+                                 <!--SOSYAL MEDYA ADRESİ YOK-->
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/sümeyye profil fotoğrafı.jpg" alt="Sümeyye Temür" />
+                              <h3>Sümeyye Temür</h3>
+                              <span>Grafik Tasarımcı</span>
+                              <ul class="social_icon">
+                                 <!--SOSYAL MEDYA ADRESİ YOK-->
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Grup 4 -->
+                  <div class="carousel-item">
+                     <div class="row">
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/irem ece profil fotoğrafı.jfif" alt="İrem Ece Dülger" />
+                              <h3>İrem Ece Dülger</h3>
+                              <span>Grafik Tasarımcı</span>
+                              <ul class="social_icon">
+                                 <!--SOSYAL MEDYA ADRESİ YOK-->
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-md-4">
+                           <div class="trannir_text">
+                              <img src="emojiler/merve profil fotoğrafı.jfif" alt="Merve Kurt" />
+                              <h3>Merve Kurt</h3>
+                              <span>Grafik Tasarımcı</span>
+                              <ul class="social_icon">
+                                 <!--SOSYAL MEDYA ADRESİ YOK-->
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <a class="carousel-control-prev" href="#teamCarousel" role="button" data-slide="prev">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#teamCarousel" role="button" data-slide="next">
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                  <span class="sr-only">Next</span>
+              </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--EKİBİMİZ KISMI CSS-->
+<style>
+/* Ok işaretlerini gizle */
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+
+/* Kullanıcı tıklama alanlarını ekle */
+.carousel-inner {
+    cursor: pointer;
+}
+
+.carousel-inner .carousel-item {
+    transition: transform 0.3s ease; /*BEKLEME SÜRESİ 3 SANİYE*/
+}
+
+.carousel-item:hover {
+    opacity: 0.8; /* Hover efekti, tıklanabilir olduğunu belirten görsel değişiklik */
+}
+
+/* Aktif öğe için özel stil */
+.carousel-item.active {
+    opacity: 1;
+}
+
+/* Yeni stil */
+.carousel-item img {
+    pointer-events: none; /* Resimlerin üzerine tıklanmasını engelle */
+}
+
+.trannir_text img {
+   border-radius: 50%;
+   object-fit: cover;
+   width: 200px;
+   height: 200px;
+   display: block;
+   margin: 0 auto;
+}
+.trannir_text {
+   text-align: center;
+   margin-bottom: 20px;
+}
+.social_icon {
+   padding: 0;
+   list-style: none;
+   display: flex;
+   justify-content: center;
+   margin-top: 10px;
+}
+.social_icon li {
+   margin: 0 5px;
+}
+.social_icon li a {
+   color: #333;
+   font-size: 18px;
+}
+</style>
+<!--EKİBİMİZ JAVASCRİPT KODLARI-->
+<script>
+   document.querySelector('.carousel-inner').addEventListener('click', function (event) {
+      var carousel = $('#teamCarousel');
+      var offsetX = event.offsetX;
+      var totalWidth = event.target.clientWidth;
+
+      if (offsetX < totalWidth / 2) {
+         carousel.carousel('prev');
+      } else {
+         carousel.carousel('next');
+      }
+   });
+</script>
+
+
+      <br>
+      <!-- İletişim Kur -->
+      <div class="our_club" id="contact-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="titlepage text_align_left" id="title-section">
+                     <h2>Bizimle İletişim Kurun</h2>
+                     <p>E-Dergimizle ilgili düşünceleriniz bizim için çok değerli! Teknolojiyi ve yenilikleri takip
+                        ederken, sizlerden gelen geri bildirimler bizim için yol gösterici olacaktır.</p>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="club_img" id="gif-section">
+                     <!-- Embed the GIF here -->
+                     <iframe src="images/giphy.webp" width="480" height="266" frameBorder="0" class="giphy-embed"
+                        allowFullScreen></iframe>
+                  </div>
+               </div>
+            </div>
+            <div class="text-left">
+               <a class="read_more" href="iletisim.html">Daha Fazla Oku</a>
+            </div>
+         </div>
+      </div>
+      <style>
+         /* Genel stil ayarları */
+         #contact-section {
+            position: relative;
+            padding: 100px 0;
+            background-color: rgb(234, 225, 137);
+            /* Subtle, neutral background color */
+            color: white;
+            text-align: center;
+            overflow: hidden;
+         }
+
+         #contact-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            /* Subtle dark overlay */
+            z-index: -1;
+         }
+
+         #title-section h2 {
+            font-size: 40px;
+            font-weight: 700;            
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            animation: bounceIn 1s ease-out;
+            color: #333;
+            /* Dark text for contrast */
+         }
+
+         #title-section p {
+            font-size: 20px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+            animation-delay: 0.5s;
+            color: #555;
+            /* Slightly lighter text color */
+         }
+
+         #gif-section iframe {
+            width: 100%;
+            max-width: 480px;
+            height: 266px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: rotate(10deg);
+            animation: rotateImage 5s infinite alternate;
+         }
+
+         #btn-section .read_more {
+            background-color: rgb(11, 181, 11);
+            /* Pink button */
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            margin-top: 40px;
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+         }
+
+         #btn-section .read_more::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+         }
+
+         #btn-section .read_more:hover::before {
+            transform: scale(1);
+         }
+
+         #btn-section .read_more:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            transform: scale(1.1);
+         }
+
+         @keyframes bounceIn {
+            0% {
+               transform: translateY(-300px);
+               opacity: 0;
+            }
+
+            60% {
+               transform: translateY(30px);
+               opacity: 1;
+            }
+
+            100% {
+               transform: translateY(0);
+            }
+         }
+
+         @keyframes fadeIn {
+            0% {
+               opacity: 0;
+            }
+
+            100% {
+               opacity: 1;
+            }
+         }
+
+         @keyframes rotateImage {
+            0% {
+               transform: rotate(10deg);
+            }
+
+            100% {
+               transform: rotate(-10deg);
+            }
+         }
+
+         @media (max-width: 768px) {
+            #contact-section {
+               padding: 60px 20px;
+            }
+
+            #title-section h2 {
+               font-size: 32px;
+            }
+
+            #btn-section .read_more {
+               padding: 12px 25px;
+               font-size: 18px;
+            }
+
+            #gif-section iframe {
+               width: 100%;
+               max-width: 100%;
+               height: auto;
+            }
+         }
+      </style>
+      
+<!--TELEFON HALİ DÜZGÜN OLSUN DİYE CSS KODU-->
+<style>
+   @media (max-width: 768px) {
+       /* Genel Gövde ve Metin */
+       body {
+           padding: 0 10px;
+       }
+   
+       header {
+           padding: 10px;
+       }
+   
+       /* Logo */
+       .logo img {
+           max-width: 70px;
+       }
+   
+       /* Menü Elemanları */
+       .email li a {
+           font-size: 16px;
+       }
+   
+       /* Kategori Bölümü */
+       .categories {
+           padding: 30px 0;
+       }
+   
+       .category-title {
+           font-size: 24px;
+           margin-bottom: 20px;
+       }
+   
+       .category-item {
+           margin-bottom: 20px;
+       }
+   
+       .category-item img {
+           width: 100px;
+           height: 100px;
+       }
+   
+       /* Footer */
+       .footer {
+           padding: 30px 0;
+       }
+   
+       .footer a {
+           font-size: 14px;
+       }
+   
+       /* Sosyal İkonlar */
+       .social_icon li {
+           margin: 0 3px;
+       }
+   
+       /* Arama Çubuğu */
+       #search-bar form {
+           flex-direction: column;
+           align-items: flex-start;
+       }
+   
+       #search-bar input {
+           width: 100%;
+       }
+   
+       #search-bar button {
+           margin: 5px 0;
+           width: 100%;
+       }
+   
+       /* Carousel Kontrolleri */
+       .carousel-control-prev, 
+       .carousel-control-next {
+           width: 40px;
+           height: 40px;
+       }
+   
+       .carousel-control-prev i,
+       .carousel-control-next i {
+           font-size: 20px;
+       }
+   
+       /* İletişim Bölümü */
+       #contact-section {
+           padding: 60px 10px;
+       }
+   
+       #gif-section iframe {
+           width: 100%;
+           max-width: 100%;
+           height: auto;
+       }
+   
+       /* Ekibimiz */
+       .trannir_text img {
+           width: 150px;
+           height: 150px;
+       }
+   
+       .trannir_text {
+           margin-bottom: 15px;
+       }
+   }
+   </style>
+   
+
+
+      <!-- end our_club -->
+      <!--Sosyal Medya Kısımları -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8 offset-md-2">
+                     <h3>İletişim Adreslerimiz</h3>
+                     <ul class="social_icon text_align_center">
+                        <li> <a href="https://www.instagram.com/paledergi2025/"><i class="fa fa-instagram"
+                                 aria-hidden="true"></i></a></li>
+                        <li> <a href="https://www.linkedin.com/company/pal-e-dergi/"><i class="fa fa-linkedin"
+                                 aria-hidden="true"></i></a></li>
+                        <li> <a href="https://x.com/pal_edergi"><i class="fa fa-twitter"></i></a></li>
+                        <li> <a href="https://www.youtube.com/@PalE-Dergi"><i class="fa fa-youtube-play"
+                                 aria-hidden="true"></i></a></li>
+                     </ul>
+                     <div class="conta text_align_center">
+                        <ul>
+                           <li>
+                              <a href="tel:+902163540059">
+                                 <img src="images/call.png" alt="#" /> Telefon (0216) 354 00 59
+                              </a>
+                           </li>
+                           <li>
+                           <li>
+                              <a href="mailto:paledergi2025@gmail.com">
+                                 <img src="images/mall.png" alt="paledergi2025@gmail.com" />
+                                 paledergi2025@gmail.com
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-10 offset-md-1">
+                     <div class="menu_bottom text_align_center">
+                        <ul>
+                           <li><a href="index.html">Ana Sayfa</a></li>
+                           <li><a href="hakkimda.html">Hakkımızda</a></li>
+                           <li><a href="ekibimiz.html">Ekibimiz</a></li>
+                           <li><a href="iletisim.html">İletişim</a></li>
+                           <li><a href="kategoriler.html">Kategoriler</a></li>
+
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright text_align_center">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-8 offset-md-2">
+                        <p>© 2025 All Rights Reserved. Ege Tanrıverdi</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/custom.js"></script>
+
+   </body>
+
+</html>
